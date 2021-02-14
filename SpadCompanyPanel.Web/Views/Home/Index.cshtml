@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "خانه";
+}
+
+@Html.Action("HomeSlider", "Home")
+<section class="ex-collection section-padding-special">
+    <div class="container">
+        @Html.Action("Gallery", "Home")
+        @Html.Action("CompanyHistory", "Home")
+    </div>
+    @Html.Action("OurTeamSection", "Home")
+    @*@Html.Action("Testimonials", "Home")*@
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
