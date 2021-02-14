@@ -17,8 +17,8 @@ namespace SpadCompanyPanel.Web
             // it is NOT necessary to register your controllers
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
-            container.RegisterType<ArticleCategoriesRepository>();
-            container.RegisterType<ArticlesRepository>();
+            //container.RegisterType<ArticleCategoriesRepository>();
+            //container.RegisterType<ArticlesRepository>();
             container.RegisterType<UsersRepository>();
             // e.g. container.RegisterType<ITestService, TestService>();
 

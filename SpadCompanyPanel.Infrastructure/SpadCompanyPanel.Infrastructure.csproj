@@ -70,15 +70,13 @@
     <Compile Include="Migrations\202012210849043_Initial.Designer.cs">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102140834154_changed-entities.cs" />
+    <Compile Include="Migrations\202102140834154_changed-entities.Designer.cs">
+      <DependentUpon>202102140834154_changed-entities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ArticleCategoriesRepository.cs" />
-    <Compile Include="Repositories\ArticleCommentsRepository.cs" />
-    <Compile Include="Repositories\ArticleHeadLinesRepository.cs" />
-    <Compile Include="Repositories\ArticlesRepositoriy.cs" />
-    <Compile Include="Repositories\AuthRepsitory.cs" />
-    <Compile Include="Repositories\CertificatesRepository.cs" />
     <Compile Include="Repositories\ContactFormsRepository.cs" />
     <Compile Include="Repositories\FaqRepository.cs" />
     <Compile Include="Repositories\GalleriesRepository.cs" />
@@ -86,8 +84,6 @@
     <Compile Include="Repositories\LogsRepository.cs" />
     <Compile Include="Repositories\OurTeamRepository.cs" />
     <Compile Include="Repositories\ProjectGalleriesRepository.cs" />
-    <Compile Include="Repositories\ProjectsRepository.cs" />
-    <Compile Include="Repositories\ProjectTypesRepository.cs" />
     <Compile Include="Repositories\ServiceIncludesRepository.cs" />
     <Compile Include="Repositories\ServicesRepository.cs" />
     <Compile Include="Repositories\StaticContentDetailsRepository.cs" />
@@ -110,6 +106,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012210849043_Initial.resx">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102140834154_changed-entities.resx">
+      <DependentUpon>202102140834154_changed-entities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

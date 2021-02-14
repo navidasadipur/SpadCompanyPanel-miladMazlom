@@ -34,7 +34,9 @@ namespace SpadCompanyPanel.Core.Models
         [Display(Name = "اطلاعات")]
         [DataType(DataType.MultilineText)]
         public string Information { get; set; }
-        public ICollection<Article> Articles { get; set; }
+
+        //public ICollection<Article> Articles { get; set; }
+
         public ICollection<UserRole> UserRoles { get; set; }
     }
 }

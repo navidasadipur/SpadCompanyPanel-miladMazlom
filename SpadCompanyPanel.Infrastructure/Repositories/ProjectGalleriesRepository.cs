@@ -20,9 +20,9 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
         //{
         //    //return _context.FoodGalleries.Where(h => h.FoodId == FoodId & h.IsDeleted == false).ToList();
         //}
-        public string GetFoodName(int FoodId)
-        {
-            return _context.Foods.Find(FoodId).Title;
-        }
+        //public string GetFoodName(int FoodId)
+        //{
+        //    return _context.Foods.Find(FoodId).Title;
+        //}
     }
 }

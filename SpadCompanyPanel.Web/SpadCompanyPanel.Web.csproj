@@ -214,7 +214,6 @@
     <Compile Include="Areas\Admin\Controllers\TestimonialsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -227,11 +226,9 @@
     <Compile Include="Providers\MyRoleProvider.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
-    <Compile Include="ViewModels\ArticleViewModels.cs" />
     <Compile Include="ViewModels\CommonViewModels.cs" />
     <Compile Include="ViewModels\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
-    <Compile Include="ViewModels\ProjectViewModels.cs" />
     <Compile Include="ViewModels\UserViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -4974,11 +4971,6 @@
     <Content Include="Scripts\kendo\2020.1.114\messages\kendo.messages.zh-TW.min.js.map" />
     <Content Include="Views\Account\AccessDenied.cshtml" />
     <Content Include="Views\Account\Login2.cshtml" />
-    <Content Include="Views\Blog\ArticleCategoriesSection.cshtml" />
-    <Content Include="Views\Blog\Details.cshtml" />
-    <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\Blog\LatestArticlesSection.cshtml" />
-    <Content Include="Views\Blog\TopArticlesSection.cshtml" />
     <Content Include="Views\Home\Certificates.cshtml" />
     <Content Include="Views\Home\CompanyHistory.cshtml" />
     <Content Include="Views\Home\ContactUsForm.cshtml" />
