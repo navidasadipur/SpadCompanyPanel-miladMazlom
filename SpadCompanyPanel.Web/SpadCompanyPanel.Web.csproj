@@ -3904,7 +3904,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -4971,8 +4970,6 @@
     <Content Include="Scripts\kendo\2020.1.114\messages\kendo.messages.zh-TW.min.js.map" />
     <Content Include="Views\Account\AccessDenied.cshtml" />
     <Content Include="Views\Account\Login2.cshtml" />
-    <Content Include="Views\Home\Certificates.cshtml" />
-    <Content Include="Views\Home\CompanyHistory.cshtml" />
     <Content Include="Views\Home\ContactUsForm.cshtml" />
     <Content Include="Views\Home\ContactUsSummary.cshtml" />
     <Content Include="Views\Home\Foods.cshtml" />
@@ -4987,6 +4984,9 @@
     <Content Include="Views\Home\Testimonials.cshtml" />
     <Content Include="Views\Shared\_Layout3.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Certificates.cshtml" />
+    <Content Include="Views\Home\CompanyHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
