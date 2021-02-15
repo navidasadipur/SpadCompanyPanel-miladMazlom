@@ -21,8 +21,9 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly OurTeamRepository _ourTeamRepo;
         //private readonly CertificatesRepository _certificatesRepo;
         private readonly FoodGalleriesRepository _foodGalleriesRepo;
+        private readonly CoverRepository _coverRepo;
 
-        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, /*CertificatesRepository certificatesRepo,*/ FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo)
+        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, /*CertificatesRepository certificatesRepo,*/ FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo, CoverRepository coverRepo)
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;
@@ -32,10 +33,16 @@ namespace SpadCompanyPanel.Web.Controllers
             //_certificatesRepo = certificatesRepo;
             _foodGalleriesRepo = foodGalleriesRepo;
             _galleryVideosRepo = galleryVideosRepo;
+            _coverRepo = coverRepo;
         }
         public ActionResult Index()
         {
             //return Redirect("/Admin/Dashboard");
+
+            //cover repository has one row
+            ViewBag.CoverTitle = _coverRepo.Get(1).Title;
+            ViewBag.CoverSubTitle = _coverRepo.Get(1).SubTitle;
+
             return View();
         }
         public ActionResult Navbar()

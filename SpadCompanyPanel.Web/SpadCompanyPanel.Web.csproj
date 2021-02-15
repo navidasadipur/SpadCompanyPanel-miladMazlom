@@ -192,6 +192,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCommentsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutMeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CoverController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleHeadLinesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\CertificatesController.cs" />
@@ -2806,6 +2808,14 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Areas\Admin\Views\Users\ResetMyPassword.cshtml" />
+    <Content Include="Areas\Admin\Views\Cover\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Cover\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Cover\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Cover\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutMe\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutMe\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutMe\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutMe\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

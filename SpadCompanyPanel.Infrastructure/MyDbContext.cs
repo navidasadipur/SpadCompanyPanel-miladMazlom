@@ -12,7 +12,7 @@ namespace SpadCompanyPanel.Infrastructure
         //public DbSet<Article> Articles { get; set; }
         //public DbSet<ArticleCategory> ArticleCategories { get; set; }
         //public DbSet<ArticleComment> ArticleComments { get; set; }
-        //public DbSet<ArticleHeadLine> ArticleHeadLines { get; set; }
+
         //public DbSet<ArticleTag> ArticleTags { get; set; }
         public DbSet<StaticContentType> StaticContentTypes { get; set; }
         public DbSet<StaticContentDetail> StaticContentDetails { get; set; }
@@ -33,5 +33,9 @@ namespace SpadCompanyPanel.Infrastructure
         //public DbSet<FoodType> FoodTypes { get; set; }
         public DbSet<FoodGallery> FoodGalleries { get; set; }
         public DbSet<GalleryVideo> GalleryVideos { get; set; }
+
+        public DbSet<Cover> Covers { get; set; }
+
+        public DbSet<AboutMe> AboutMes { get; set; }
     }
 }

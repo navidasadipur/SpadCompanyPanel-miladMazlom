@@ -54,18 +54,19 @@ namespace SpadCompanyPanel.Infrastructure.Helpers
             string controller = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
             string action = HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString();
 
-            if (!Check(controller.Trim().ToLower() + action.Trim().ToLower()))
-            {
-                if (GetCurrentUserId() == "")
-                {
-                    HttpContext.Current.Response.Redirect($"/Account/Login?returnUrl={HttpContext.Current.Request.ServerVariables["HTTP_REFERER"]}");
-                }
-                else
-                {
-                    HttpContext.Current.Response.Redirect($"/Account/AccessDenied?returnUrl={HttpContext.Current.Request.ServerVariables["HTTP_REFERER"]}");
-                }
+            ////TODO
+            //if (!Check(controller.Trim().ToLower() + action.Trim().ToLower()))
+            //{
+            //    if (GetCurrentUserId() == "")
+            //    {
+            //        HttpContext.Current.Response.Redirect($"/Account/Login?returnUrl={HttpContext.Current.Request.ServerVariables["HTTP_REFERER"]}");
+            //    }
+            //    else
+            //    {
+            //        HttpContext.Current.Response.Redirect($"/Account/AccessDenied?returnUrl={HttpContext.Current.Request.ServerVariables["HTTP_REFERER"]}");
+            //    }
 
-            }
+            //}
 
         }
 
