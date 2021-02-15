@@ -16,9 +16,10 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
             _context = context;
             _logger = logger;
         }
-        public List<Cover> GetCover(int coverId)
+
+        public Cover GetFirstCover()
         {
-            return _context.Covers.Where(c => c.Id == coverId & c.IsDeleted == false).ToList();
+            return _context.Covers.FirstOrDefault(c => c.IsDeleted == false);
         }
 
         //public string GetArticleName(int articleId)

@@ -29,7 +29,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             var model = new AboutMe();
 
             //this table has one row
-            model = _repo.Get(1);
+            model = _repo.GetFirstAboutMe();
 
             return View(model);
         }
@@ -39,7 +39,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         public ActionResult Index(AboutMe model)
         {
             //this table has one row
-            var existingAboutMeModel = _repo.Get(1);
+            var existingAboutMeModel = _repo.GetFirstAboutMe();
 
             if (existingAboutMeModel == null)
             {
@@ -48,9 +48,9 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 return View(model);
             }
 
-            existingAboutMeModel.BioGraphy = model.Biography;
+            existingAboutMeModel.Biography = model.Biography;
 
-            _repo.Update(existingcoverModel);
+            _repo.Update(existingAboutMeModel);
 
             return View(existingAboutMeModel);
         }

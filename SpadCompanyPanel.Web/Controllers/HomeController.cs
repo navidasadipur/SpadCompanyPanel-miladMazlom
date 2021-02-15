@@ -22,8 +22,9 @@ namespace SpadCompanyPanel.Web.Controllers
         //private readonly CertificatesRepository _certificatesRepo;
         private readonly FoodGalleriesRepository _foodGalleriesRepo;
         private readonly CoverRepository _coverRepo;
+        private readonly AboutMeRepository _aboutMeRepo;
 
-        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, /*CertificatesRepository certificatesRepo,*/ FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo, CoverRepository coverRepo)
+        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, /*CertificatesRepository certificatesRepo,*/ FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo, CoverRepository coverRepo, AboutMeRepository aboutMeRepo)
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;
@@ -33,15 +34,27 @@ namespace SpadCompanyPanel.Web.Controllers
             //_certificatesRepo = certificatesRepo;
             _foodGalleriesRepo = foodGalleriesRepo;
             _galleryVideosRepo = galleryVideosRepo;
-            _coverRepo = coverRepo;
+            this._coverRepo = coverRepo;
+            this._aboutMeRepo = aboutMeRepo;
         }
         public ActionResult Index()
         {
             //return Redirect("/Admin/Dashboard");
-
+            
+            if (_coverRepo.GetCount() == 0)
+            {
+                return View();
+            }
             //cover repository has one row
-            ViewBag.CoverTitle = _coverRepo.Get(1).Title;
-            ViewBag.CoverSubTitle = _coverRepo.Get(1).SubTitle;
+            ViewBag.CoverTitle = _coverRepo.GetFirstCover().Title;
+            ViewBag.CoverSubTitle = _coverRepo.GetFirstCover().SubTitle;
+
+            if (_aboutMeRepo.GetCount() == 0)
+            {
+                return View();
+            }
+            //AboutMe repository has one row
+            ViewBag.Biography = _aboutMeRepo.GetFirstAboutMe().Biography;
 
             return View();
         }

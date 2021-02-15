@@ -8,9 +8,12 @@ namespace SpadCompanyPanel.Core.Models
 {
     public class Cover : IBaseEntity
     {
-
-
         public int Id { get; set; }
+        [Display(Name = "تصویر")]
+        public string Image { get; set; }
+        [Display(Name = "عنوان تصویر")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public string ImageTitle { get; set; }
 
         [MaxLength(700)]
         [Display(Name = "عنوان")]

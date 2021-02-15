@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpadCompanyPanel.Infrastructure.Repositories
 {
-    public class AboutMeRepository : BaseRepository<Cover, MyDbContext>
+    public class AboutMeRepository : BaseRepository<AboutMe, MyDbContext>
     {
         private readonly MyDbContext _context;
         private readonly LogsRepository _logger;
@@ -16,6 +16,12 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
             _context = context;
             _logger = logger;
         }
+
+        public AboutMe GetFirstAboutMe()
+        {
+            return _context.AboutMes.FirstOrDefault(c => c.IsDeleted == false);
+        }
+
         //public List<Cover> GetCover(int coverId)
         //{
         //    return _context.Covers.Where(c => c.Id == coverId & c.IsDeleted == false).ToList();

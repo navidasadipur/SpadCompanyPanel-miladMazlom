@@ -3,10 +3,11 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class changedentities : DbMigration
+    public partial class restorebakFile : DbMigration
     {
         public override void Up()
         {
+            RenameTable(name: "dbo.ArticleCategories", newName: "Covers");
             DropForeignKey("dbo.Articles", "ArticleCategoryId", "dbo.ArticleCategories");
             DropForeignKey("dbo.ArticleComments", "ArticleId", "dbo.Articles");
             DropForeignKey("dbo.ArticleComments", "ParentId", "dbo.ArticleComments");
@@ -23,8 +24,23 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
             DropIndex("dbo.ArticleTags", new[] { "ArticleId" });
             DropIndex("dbo.FoodGalleries", new[] { "Food_Id" });
             DropIndex("dbo.Foods", new[] { "FoodTypeId" });
+            CreateTable(
+                "dbo.AboutMes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Biography = c.String(nullable: false),
+                        InsertUser = c.String(),
+                        InsertDate = c.DateTime(),
+                        UpdateUser = c.String(),
+                        UpdateDate = c.DateTime(),
+                        IsDeleted = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            AddColumn("dbo.Covers", "SubTitle", c => c.String(nullable: false, maxLength: 2400));
+            AlterColumn("dbo.Covers", "Title", c => c.String(nullable: false, maxLength: 700));
             DropColumn("dbo.FoodGalleries", "Food_Id");
-            DropTable("dbo.ArticleCategories");
             DropTable("dbo.Articles");
             DropTable("dbo.ArticleComments");
             DropTable("dbo.ArticleHeadLines");
@@ -155,21 +171,10 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            CreateTable(
-                "dbo.ArticleCategories",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Title = c.String(nullable: false, maxLength: 400),
-                        InsertUser = c.String(),
-                        InsertDate = c.DateTime(),
-                        UpdateUser = c.String(),
-                        UpdateDate = c.DateTime(),
-                        IsDeleted = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
             AddColumn("dbo.FoodGalleries", "Food_Id", c => c.Int());
+            AlterColumn("dbo.Covers", "Title", c => c.String(nullable: false, maxLength: 400));
+            DropColumn("dbo.Covers", "SubTitle");
+            DropTable("dbo.AboutMes");
             CreateIndex("dbo.Foods", "FoodTypeId");
             CreateIndex("dbo.FoodGalleries", "Food_Id");
             CreateIndex("dbo.ArticleTags", "ArticleId");
@@ -186,6 +191,7 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
             AddForeignKey("dbo.ArticleComments", "ParentId", "dbo.ArticleComments", "Id");
             AddForeignKey("dbo.ArticleComments", "ArticleId", "dbo.Articles", "Id", cascadeDelete: true);
             AddForeignKey("dbo.Articles", "ArticleCategoryId", "dbo.ArticleCategories", "Id");
+            RenameTable(name: "dbo.Covers", newName: "ArticleCategories");
         }
     }
 }

@@ -70,13 +70,9 @@
     <Compile Include="Migrations\202012210849043_Initial.Designer.cs">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202102140834154_changed-entities.cs" />
-    <Compile Include="Migrations\202102140834154_changed-entities.Designer.cs">
-      <DependentUpon>202102140834154_changed-entities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102141419275_CoverCreated.cs" />
-    <Compile Include="Migrations\202102141419275_CoverCreated.Designer.cs">
-      <DependentUpon>202102141419275_CoverCreated.cs</DependentUpon>
+    <Compile Include="Migrations\202102151137276_restore.bakFile.cs" />
+    <Compile Include="Migrations\202102151137276_restore.bakFile.Designer.cs">
+      <DependentUpon>202102151137276_restore.bakFile.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
@@ -113,11 +109,8 @@
     <EmbeddedResource Include="Migrations\202012210849043_Initial.resx">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102140834154_changed-entities.resx">
-      <DependentUpon>202102140834154_changed-entities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102141419275_CoverCreated.resx">
-      <DependentUpon>202102141419275_CoverCreated.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102151137276_restore.bakFile.resx">
+      <DependentUpon>202102151137276_restore.bakFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

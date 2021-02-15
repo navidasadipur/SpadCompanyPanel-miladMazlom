@@ -29,7 +29,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             var coverModel = new Cover();
 
             //this table has one row
-            coverModel = _repo.Get(1);
+            coverModel = _repo.GetFirstCover();
 
             return View(coverModel);
         }
@@ -39,7 +39,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         public ActionResult Index(Cover model)
         {
             //this table has one row
-            var existingcoverModel = _repo.Get(1);
+            var existingcoverModel = _repo.GetFirstCover();
 
             if (existingcoverModel == null)
             {

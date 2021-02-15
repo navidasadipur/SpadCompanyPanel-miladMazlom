@@ -7,13 +7,13 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class changedentities : IMigrationMetadata
+    public sealed partial class restorebakFile : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changedentities));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(restorebakFile));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102140834154_changed-entities"; }
+            get { return "202102151137276_restore.bakFile"; }
         }
         
         string IMigrationMetadata.Source
