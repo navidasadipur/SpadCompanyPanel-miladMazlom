@@ -12,17 +12,17 @@ namespace SpadCompanyPanel.Core.Models
         [Display(Name = "تصویر")]
         public string Image { get; set; }
         [Display(Name = "عنوان تصویر")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string ImageTitle { get; set; }
 
         [MaxLength(700)]
         [Display(Name = "عنوان")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Title { get; set; }
 
         [MaxLength(2400)]
         [Display(Name = "متن زیر عنوان")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string SubTitle { get; set; }
 
         public string InsertUser { get; set; }

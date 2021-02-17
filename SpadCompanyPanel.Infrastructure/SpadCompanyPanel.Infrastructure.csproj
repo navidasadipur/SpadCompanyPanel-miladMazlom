@@ -74,6 +74,18 @@
     <Compile Include="Migrations\202102151137276_restore.bakFile.Designer.cs">
       <DependentUpon>202102151137276_restore.bakFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102151353492_test.cs" />
+    <Compile Include="Migrations\202102151353492_test.Designer.cs">
+      <DependentUpon>202102151353492_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102160912049_coverModelChanged.cs" />
+    <Compile Include="Migrations\202102160912049_coverModelChanged.Designer.cs">
+      <DependentUpon>202102160912049_coverModelChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102161009129_AboutMeModelChanged.cs" />
+    <Compile Include="Migrations\202102161009129_AboutMeModelChanged.Designer.cs">
+      <DependentUpon>202102161009129_AboutMeModelChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +123,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102151137276_restore.bakFile.resx">
       <DependentUpon>202102151137276_restore.bakFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102151353492_test.resx">
+      <DependentUpon>202102151353492_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102160912049_coverModelChanged.resx">
+      <DependentUpon>202102160912049_coverModelChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102161009129_AboutMeModelChanged.resx">
+      <DependentUpon>202102161009129_AboutMeModelChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

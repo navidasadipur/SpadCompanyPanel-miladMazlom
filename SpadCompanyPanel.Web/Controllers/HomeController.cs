@@ -48,6 +48,7 @@ namespace SpadCompanyPanel.Web.Controllers
             //cover repository has one row
             ViewBag.CoverTitle = _coverRepo.GetFirstCover().Title;
             ViewBag.CoverSubTitle = _coverRepo.GetFirstCover().SubTitle;
+            ViewBag.CoverImage = _coverRepo.GetFirstCover().Image;
 
             if (_aboutMeRepo.GetCount() == 0)
             {
@@ -55,6 +56,7 @@ namespace SpadCompanyPanel.Web.Controllers
             }
             //AboutMe repository has one row
             ViewBag.Biography = _aboutMeRepo.GetFirstAboutMe().Biography;
+            ViewBag.BiographyImage = _aboutMeRepo.GetFirstAboutMe().Image;
 
             return View();
         }

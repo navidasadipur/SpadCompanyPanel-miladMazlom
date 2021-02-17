@@ -1,10 +1,6 @@
-﻿@model SpadCompanyPanel.Core.Models.ArticleHeadLine
-
-@{
-    ViewBag.Title = "Delete";
-}
+﻿@model SpadCompanyPanel.Core.Models.Gallery
 <h4 class="card-label">
-    آیا مطمئن هستید که می خواهید این سر تیتر را حذف کنید؟
+    آیا مطمئن هستید که می خواهید این تصویر را حذف کنید؟
 </h4>
 <dl class="row" style="padding-top:10px">
     <dt class="col-sm-4">
@@ -12,6 +8,12 @@
     </dt>
     <dd class="col-sm-8">
         @Html.DisplayFor(model => model.Title)
+    </dd>
+    <dt class="col-sm-4">
+        @Html.DisplayNameFor(model => model.Image)
+    </dt>
+    <dd class="col-sm-8">
+        <img src="~/Files/GalleryImages/@Model.Image" style="height: 50px" alt="@Model.Title" />
     </dd>
 </dl>
 <div style="float:left">
