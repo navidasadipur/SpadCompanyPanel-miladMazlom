@@ -23,8 +23,20 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly FoodGalleriesRepository _foodGalleriesRepo;
         private readonly CoverRepository _coverRepo;
         private readonly AboutMeRepository _aboutMeRepo;
+        private readonly GalleryCategoryRepository _galleryCategoryRepo;
 
-        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, /*CertificatesRepository certificatesRepo,*/ FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo, CoverRepository coverRepo, AboutMeRepository aboutMeRepo)
+        public HomeController( StaticContentDetailsRepository contentRepo, 
+            GalleriesRepository galleryRepo,
+            TestimonialsRepository testimonialRepo,
+            ContactFormsRepository contactFormRepo,
+            OurTeamRepository ourTeamRepo,
+            /*CertificatesRepository certificatesRepo,*/ 
+            FoodGalleriesRepository foodGalleriesRepo, 
+            GalleryVideosRepository galleryVideosRepo, 
+            CoverRepository coverRepo, 
+            AboutMeRepository aboutMeRepo,
+            GalleryCategoryRepository galleryCategoryRepo
+            )
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;
@@ -36,6 +48,7 @@ namespace SpadCompanyPanel.Web.Controllers
             _galleryVideosRepo = galleryVideosRepo;
             this._coverRepo = coverRepo;
             this._aboutMeRepo = aboutMeRepo;
+            this._galleryCategoryRepo = galleryCategoryRepo;
         }
         public ActionResult Index()
         {
@@ -57,6 +70,31 @@ namespace SpadCompanyPanel.Web.Controllers
             //AboutMe repository has one row
             ViewBag.Biography = _aboutMeRepo.GetFirstAboutMe().Biography;
             ViewBag.BiographyImage = _aboutMeRepo.GetFirstAboutMe().Image;
+
+            var categories = _galleryCategoryRepo.GetAllGalleryCategories();
+
+            foreach (var category in categories)
+            {
+                var test = category.Galleries.Count;
+            }
+
+            //categories
+            ViewBag.Categories = _galleryCategoryRepo.GetAllGalleryCategories();
+
+            ////filling the galleries of categories with reletive images
+            //var galleries = _galleryRepo.GetGalleries();
+
+            //foreach (var category in categoreis)
+            //{
+            //    foreach (var gallery in galleries)
+            //    {
+            //        if (gallery.GalleryCategoryId == category.Id)
+            //        {
+            //            category.Galleries.Add(gallery);
+            //        }
+            //    }
+            //}
+
 
             return View();
         }

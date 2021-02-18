@@ -1,6 +1,7 @@
 ﻿using SpadCompanyPanel.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,11 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
         {
             _context = context;
             _logger = logger;
+        }
+
+        public List<GalleryCategory> GetAllGalleryCategories()
+        {
+            return _context.galleryCategories.Where(a => a.IsDeleted == false).Include(g => g.Galleries ).OrderByDescending(a => a.InsertDate).ToList();
         }
 
         //public List<GalleryCategory> GetGalleryCategories()

@@ -37,5 +37,7 @@ namespace SpadCompanyPanel.Infrastructure
         public DbSet<Cover> Covers { get; set; }
 
         public DbSet<AboutMe> AboutMes { get; set; }
+
+        public DbSet<GalleryCategory> galleryCategories { get; set; }
     }
 }

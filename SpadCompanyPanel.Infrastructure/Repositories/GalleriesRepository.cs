@@ -19,7 +19,7 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
 
         public List<Gallery> GetGalleries()
         {
-            return _context.Galleries.Where(a => a.IsDeleted == false).Include(g => g.GalleryCategory).Include(g => g.Image).Include(g => g.Title).OrderByDescending(a => a.InsertDate).ToList();
+            return _context.Galleries.Where(a => a.IsDeleted == false).Include(g => g.GalleryCategory).OrderByDescending(a => a.InsertDate).ToList();
         }
 
     }
