@@ -13,18 +13,23 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
     public class GalleryController : Controller
     {
         private readonly GalleriesRepository _repo;
-        public GalleryController(GalleriesRepository repo)
+        private readonly GalleryCategoryRepository _categoryRepo;
+        public GalleryController(GalleriesRepository repo, GalleryCategoryRepository categoryRepo)
         {
             _repo = repo;
+            _categoryRepo = categoryRepo;
         }
         public ActionResult Index()
         {
             return View(_repo.GetAll());
         }
+
         public ActionResult Create()
         {
+            ViewBag.GalleryCategoryId = new SelectList(_categoryRepo.GetAll(), "Id", "Title");
             return PartialView();
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Gallery image,HttpPostedFileBase GalleryImage)
@@ -73,6 +78,9 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.GalleryCategoryId = new SelectList(_categoryRepo.GetAll(), "Id", "Title");
+
             return PartialView(image);
         }
 

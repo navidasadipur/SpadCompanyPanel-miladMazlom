@@ -190,6 +190,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCommentsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AboutMeController.cs" />
@@ -2822,6 +2823,10 @@
     <Content Include="Areas\Admin\Views\AboutMe\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AboutMe\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\AboutMe\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryCategory\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryCategory\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

@@ -11,12 +11,17 @@ namespace SpadCompanyPanel.Core.Models
         [Display(Name = "تصویر")]
         public string Image { get; set; }
         [Display(Name = "عنوان تصویر")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Title { get; set; }
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }
         public string UpdateUser { get; set; }
         public DateTime? UpdateDate { get; set; }
         public bool IsDeleted { get; set; }
+
+        public int? GalleryCategoryId { get; set; }
+
+        [Display(Name = "دسته بندی")]
+        public GalleryCategory GalleryCategory { get; set; }
     }
 }

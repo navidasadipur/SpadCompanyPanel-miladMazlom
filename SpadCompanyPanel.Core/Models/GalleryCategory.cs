@@ -6,13 +6,14 @@ using System.Web.Mvc;
 
 namespace SpadCompanyPanel.Core.Models
 {
-    public class Category : IBaseEntity
+    public class GalleryCategory : IBaseEntity
     {
         public int Id { get; set; }
 
-        [MaxLength(700)]
-        [Display(Name = "دسته بندی")]
-        public string CategoryName { get; set; }
+        [Display(Name = "نام دسته")]
+        [MaxLength(400, ErrorMessage = "نام دسته باید از 400 کارکتر کمتر باشد")]
+        [Required(ErrorMessage = "لطفا نام دسته را وارد کنید")]
+        public string Title { get; set; }
 
         public string InsertUser { get; set; }
 
@@ -23,6 +24,8 @@ namespace SpadCompanyPanel.Core.Models
         public DateTime? UpdateDate { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public ICollection<Gallery> Galleries { get; set; }
 
         ////[Display(Name = "توضیح")]
         ////[DataType(DataType.MultilineText)]
