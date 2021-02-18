@@ -298,6 +298,10 @@
                                 <li>
                                     <a href="#" data-filter="*" class="selected">همه</a>
                                 </li>
+                                @foreach (var category in ViewBag.Categories)
+                                {
+                                    <li><a href="#" data-filter=".modeling">category.Title</a></li>
+                                }
                                 <li><a href="#" data-filter=".modeling">مدلینگ</a></li>
                                 <li><a href="#" data-filter=".film">بازیگری</a></li>
                                 <li><a href="#" data-filter=".mazhabi">مذهبی</a></li>
