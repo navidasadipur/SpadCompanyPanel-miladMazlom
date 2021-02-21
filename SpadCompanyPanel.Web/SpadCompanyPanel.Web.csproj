@@ -190,6 +190,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\PersonalCharacterController.cs" />
     <Compile Include="Areas\Admin\Controllers\GalleryCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCommentsController.cs" />
@@ -2827,6 +2828,15 @@
     <Content Include="Areas\Admin\Views\GalleryCategory\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\GalleryCategory\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\GalleryCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Create1.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Delete-1.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Edit-1.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Create2.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Create3.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

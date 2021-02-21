@@ -76,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\PersonalCharacter.cs" />
     <Compile Include="Models\GalleryCategory.cs" />
     <Compile Include="Models\AboutMe.cs" />
     <Compile Include="Models\Cover.cs" />

@@ -95,6 +95,11 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
 
                 var cover = _repo.GetFirstCover();
 
+                if (cover == null)
+                {
+                    cover = new Cover();
+                }
+
                 cover.Image = coverImage.Image;
                 cover.ImageTitle = coverImage.ImageTitle;
 

@@ -93,6 +93,11 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
 
                 var aboutMe = _repo.GetFirstAboutMe();
 
+                if (aboutMe == null)
+                {
+                    aboutMe = new AboutMe();
+                }
+
                 aboutMe.Image = aboutMeImage.Image;
                 aboutMe.ImageTitle = aboutMeImage.ImageTitle;
 

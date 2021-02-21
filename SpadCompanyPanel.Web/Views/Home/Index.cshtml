@@ -568,32 +568,34 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 mb30">
-                            <div class="bloglist item">
-                                <div class="post-content">
-                                    <div class="post-image">
-                                        <img width="400px" height="400px" alt="archive" src="/Content/client/images/portfolio/copy (2).jfif" />
-                                        <div class="post-info">
-                                            <div class="inner text-center">
-                                                <span class="post-author">تکیه بر تجارب گذشته</span>
+
+                        @foreach (var character in ViewBag.PersonalCharacters)
+                        {
+
+                            <div class="col-lg-4 col-md-6 mb30">
+                                <div class="bloglist item">
+                                    <div class="post-content">
+                                        <div class="post-image">
+                                            <img width="400px" height="400px" alt="archive" src="~/Files/GalleryImages/@character.Image" />
+                                            <div class="post-info">
+                                                <div class="inner text-center">
+                                                    <span class="post-author">@character.Title</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="post-text">
-                                        <h4><a href="#">تکیه بر تجارب گذشته</a></h4>
-                                        <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                                            چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون
-                                            بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                            برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
-                                            هدف بهبود ابزارهای کاربردی می باشد.
-                                        </p>
+                                        <div class="post-text">
+                                            <h4><a href="#">@character.Title</a></h4>
+                                            <p>
+                                                @character.ShortDescription
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
 
-                        <div class="col-lg-4 col-md-6 mb30">
+
+                        @*<div class="col-lg-4 col-md-6 mb30">
                             <div class="bloglist item">
                                 <div class="post-content">
                                     <div class="post-image">
@@ -641,7 +643,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </section>

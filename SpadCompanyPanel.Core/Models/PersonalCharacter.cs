@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace SpadCompanyPanel.Core.Models
 {
-    public class Character : IBaseEntity
+    public class PersonalCharacter : IBaseEntity
     {
         public int Id { get; set; }
 
-        [Display(Name = "نام ویژگی ها")]
-        [MaxLength(400, ErrorMessage = "نام دسته باید از 400 کارکتر کمتر باشد")]
+        [Display(Name = "نام ویژگی")]
+        [MaxLength(400, ErrorMessage = "نام ویژگی باید از 400 کارکتر کمتر باشد")]
         //[Required(ErrorMessage = "لطفا نام دسته را وارد کنید")]
         public string Title { get; set; }
 

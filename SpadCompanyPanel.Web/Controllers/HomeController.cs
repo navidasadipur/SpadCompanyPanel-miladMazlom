@@ -24,6 +24,7 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly CoverRepository _coverRepo;
         private readonly AboutMeRepository _aboutMeRepo;
         private readonly GalleryCategoryRepository _galleryCategoryRepo;
+        private readonly PersonalCharacterRepository _personalCharacterRepo;
 
         public HomeController( StaticContentDetailsRepository contentRepo, 
             GalleriesRepository galleryRepo,
@@ -35,7 +36,8 @@ namespace SpadCompanyPanel.Web.Controllers
             GalleryVideosRepository galleryVideosRepo, 
             CoverRepository coverRepo, 
             AboutMeRepository aboutMeRepo,
-            GalleryCategoryRepository galleryCategoryRepo
+            GalleryCategoryRepository galleryCategoryRepo,
+            PersonalCharacterRepository personalCharacterRepo
             )
         {
             _contentRepo = contentRepo;
@@ -49,6 +51,7 @@ namespace SpadCompanyPanel.Web.Controllers
             this._coverRepo = coverRepo;
             this._aboutMeRepo = aboutMeRepo;
             this._galleryCategoryRepo = galleryCategoryRepo;
+            this._personalCharacterRepo = personalCharacterRepo;
         }
         public ActionResult Index()
         {
@@ -81,6 +84,9 @@ namespace SpadCompanyPanel.Web.Controllers
             //categories
             ViewBag.Categories = _galleryCategoryRepo.GetAllGalleryCategories();
 
+            //Personal character
+            ViewBag.PersonalCharacters = _personalCharacterRepo.GetAllPersonalCharacters();
+
             ////filling the galleries of categories with reletive images
             //var galleries = _galleryRepo.GetGalleries();
 
@@ -94,7 +100,6 @@ namespace SpadCompanyPanel.Web.Controllers
             //        }
             //    }
             //}
-
 
             return View();
         }

@@ -20,7 +20,7 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
 
         public List<GalleryCategory> GetAllGalleryCategories()
         {
-            return _context.galleryCategories.Where(a => a.IsDeleted == false).Include(g => g.Galleries ).OrderByDescending(a => a.InsertDate).ToList();
+            return _context.GalleryCategories.Where(a => a.IsDeleted == false).Include(g => g.Galleries ).OrderByDescending(a => a.InsertDate).ToList();
         }
 
         //public List<GalleryCategory> GetGalleryCategories()
