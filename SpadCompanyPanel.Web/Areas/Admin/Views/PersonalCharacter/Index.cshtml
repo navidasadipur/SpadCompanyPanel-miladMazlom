@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SpadCompanyPanel.Core.Models.PersonalCharacter>
+﻿@model SpadCompanyPanel.Web.Areas.Admin.Models.PersonalCharacterPanelView
 @using Kendo.Mvc.UI;
 @using SpadCompanyPanel.Infrastructure.Helpers;
 
@@ -23,75 +23,159 @@
         </div>*@
 
 </div>
-<div class="row">
-    @for (int propertyNum = 1; propertyNum < 4; propertyNum++)
-    {
-        <div class="col-lg-4">
-            <div class="card card-custom gutter-b example example-compact">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        ویرایش ویژگی @propertyNum
-                    </h3>
-                    <div class="card-toolbar">
-                        <!--begin::Button-->
-                        <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate{propertyNum}()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
-                            <span class="svg-icon svg-icon-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24" />
-                                        <circle fill="#000000" cx="9" cy="15" r="6" />
-                                        <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
-                                    </g>
-                                </svg><!--end::Svg Icon-->
-                            </span>	تغییر عکس ویژگی @propertyNum
-                        </a>
-                        <!--end::Button-->
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+
+            <div class="col-lg-4">
+                <div class="card card-custom gutter-b example example-compact">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            ویرایش ویژگی یک
+                        </h3>
+                        <div class="card-toolbar">
+                            <!--begin::Button-->
+                            <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate1()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
+                                <span class="svg-icon svg-icon-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <circle fill="#000000" cx="9" cy="15" r="6" />
+                                            <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                        </g>
+                                    </svg><!--end::Svg Icon-->
+                                </span>تغییر عکس ویژگی یک 
+                            </a>
+                            <!--end::Button-->
+                        </div>
+                    </div>
+                    @*@Html.HiddenFor(model => model.ElementAtOrDefault(propertyNum).Id)*@
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @*@Html.LabelFor(model => model.Skip(propertyNum - 1).FirstOrDefault().Title, new { @class = "control-label col-md-3" })
+                            @Html.EditorFor(model => model.Skip(propertyNum - 1).FirstOrDefault().Title, new { htmlAttributes = new { @class = "form-control " } })
+                            @Html.ValidationMessageFor(model => model.Skip(propertyNum - 1).FirstOrDefault().Title, "", new { @class = "form-text text-danger" })*@
+                            @Html.LabelFor(model => model.TitleOne, new { @class = "control-label col-md-3" })
+                            @Html.EditorFor(model => model.TitleOne, new { htmlAttributes = new { @class = "form-control " } })
+                            @Html.ValidationMessageFor(model => model.TitleOne, "", new { @class = "form-text text-danger" })
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShortDescriptionOne, new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.ShortDescriptionOne, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ShortDescriptionOne, "", new { @class = "form-text text-danger" })
+                        </div>
                     </div>
                 </div>
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-                    @Html.HiddenFor(model => model.ElementAtOrDefault(propertyNum).Id)
+            </div>
+            <div class="col-lg-4">
+                <div class="card card-custom gutter-b example example-compact">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            ویرایش ویژگی دو
+                        </h3>
+                        <div class="card-toolbar">
+                            <!--begin::Button-->
+                            <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate2()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
+                                <span class="svg-icon svg-icon-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <circle fill="#000000" cx="9" cy="15" r="6" />
+                                            <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                        </g>
+                                    </svg><!--end::Svg Icon-->
+                                </span>	تغییر عکس ویژگی دو
+                            </a>
+                            <!--end::Button-->
+                        </div>
+                    </div>
+                    @*@Html.HiddenFor(model => model.ElementAtOrDefault(propertyNum).Id)*@
                     <div class="card-body">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Skip(propertyNum - 1).FirstOrDefault().Title , new { @class = "control-label col-md-3" })
-                            @Html.EditorFor(model => model.Skip(propertyNum - 1).FirstOrDefault().Title, new { htmlAttributes = new { @class = "form-control " } })
-                            @Html.ValidationMessageFor(model => model.Skip(propertyNum - 1).FirstOrDefault().Title, "", new { @class = "form-text text-danger" })
+                            @Html.LabelFor(model => model.TitleTwo, new { @class = "control-label col-md-3" })
+                            @Html.EditorFor(model => model.TitleTwo, new { htmlAttributes = new { @class = "form-control " } })
+                            @Html.ValidationMessageFor(model => model.TitleTwo, "", new { @class = "form-text text-danger" })
                         </div>
                     </div>
                     <div class="card-body">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Skip(propertyNum - 1).FirstOrDefault().ShortDescription, new { @class = "control-label" })
-                            @Html.TextAreaFor(model => model.Skip(propertyNum - 1).FirstOrDefault().ShortDescription, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(model => model.Skip(propertyNum - 1).FirstOrDefault().ShortDescription, "", new { @class = "form-text text-danger" })
+                            @Html.LabelFor(model => model.ShortDescriptionTwo, new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.ShortDescriptionTwo, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ShortDescriptionTwo, "", new { @class = "form-text text-danger" })
                         </div>
                     </div>
-                    <div class="card-footer">
-                        @*<a href="@Url.Action("Index")" class="btn btn-secondary">انصراف</a>*@
-                        <input type="submit" name="btn" value="ثبت ویژگی @propertyNum" class="btn btn-primary mr-2" />
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card card-custom gutter-b example example-compact">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            ویرایش ویژگی سه
+                        </h3>
+                        <div class="card-toolbar">
+                            <!--begin::Button-->
+                            <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate3()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
+                                <span class="svg-icon svg-icon-md">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <circle fill="#000000" cx="9" cy="15" r="6" />
+                                            <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                                        </g>
+                                    </svg><!--end::Svg Icon-->
+                                </span>	تغییر عکس ویژگی سه
+                            </a>
+                            <!--end::Button-->
+                        </div>
                     </div>
+                    @*@Html.HiddenFor(model => model.ElementAtOrDefault(propertyNum).Id)*@
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.TitleThree, new { @class = "control-label col-md-3" })
+                            @Html.EditorFor(model => model.TitleThree, new { htmlAttributes = new { @class = "form-control " } })
+                            @Html.ValidationMessageFor(model => model.TitleThree, "", new { @class = "form-text text-danger" })
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ShortDescriptionThree, new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.ShortDescriptionThree, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ShortDescriptionThree, "", new { @class = "form-text text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
 
                     <!-- Modal -->
                     @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header" id="myModalHeader">
-                                        <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <i aria-hidden="true" class="ki ki-close"></i>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body" id="myModalBody">
-                                        ...
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="myModalHeader">
+                        <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i aria-hidden="true" class="ki ki-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="myModalBody">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>*@
                     <!-- Modal -->
-
-
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -108,14 +192,17 @@
                             </div>
                         </div>
                     </div>
+            <!-- Modal -->
 
-                    <!-- Modal -->
-                }
-            </div>
+        <div class="card-footer col-12">
+            @*<a href="@Url.Action("Index")" class="btn btn-secondary">انصراف</a>*@
+            <input type="submit" name="btn" value="ثبت ویژگی ها" class="btn btn-primary mr-6" />
         </div>
-    }
+    </div>
+}
 
-</div>
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>

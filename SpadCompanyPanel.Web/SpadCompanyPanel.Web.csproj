@@ -217,6 +217,7 @@
     <Compile Include="Areas\Admin\Controllers\StaticContentTypesController.cs" />
     <Compile Include="Areas\Admin\Controllers\TestimonialsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\PersonalCharacterPanelView.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -5021,7 +5022,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Files\ArticleImages\Temp\" />
     <Folder Include="Files\CertificatesImages\Temp\" />
     <Folder Include="Files\FoodImages\Temp\" />

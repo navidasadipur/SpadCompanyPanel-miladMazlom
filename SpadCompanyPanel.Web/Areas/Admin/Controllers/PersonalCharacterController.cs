@@ -8,6 +8,7 @@ using SpadCompanyPanel.Core.Models;
 using System.Net;
 using System.IO;
 using SpadCompanyPanel.Infrastructure.Helpers;
+using SpadCompanyPanel.Web.Areas.Admin.Models;
 
 namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
 {
@@ -28,33 +29,54 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            var model = _repo.GetAll().OrderBy(ch => ch.Id);
+            var personalCharacters = _repo.GetAll().OrderBy(ch => ch.Id);
 
-            return View(model);
+            var personalCharacterPanelView = new PersonalCharacterPanelView
+            {
+                TitleOne = personalCharacters.OrderBy(ch => ch.Id).FirstOrDefault().Title,
+                TitleTwo = personalCharacters.OrderBy(ch => ch.Id).Skip(1).FirstOrDefault().Title,
+                TitleThree = personalCharacters.OrderBy(ch => ch.Id).Skip(2).FirstOrDefault().Title,
+
+                ShortDescriptionOne = personalCharacters.OrderBy(ch => ch.Id).FirstOrDefault().ShortDescription,
+                ShortDescriptionTwo = personalCharacters.OrderBy(ch => ch.Id).Skip(1).FirstOrDefault().ShortDescription,
+                ShortDescriptionThree = personalCharacters.OrderBy(ch => ch.Id).Skip(2).FirstOrDefault().ShortDescription,
+            };
+
+            return View(personalCharacterPanelView);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(PersonalCharacter model, string btn)
+        public ActionResult Index(PersonalCharacterPanelView model)
         {
-            if (btn.Equals("ثبت ویژگی 1"))
-            {
-                var firstPersonalChar = _repo.GetFirstPersonalCharacter();
+            var firstPersonalChar = _repo.GetFirstPersonalCharacter();
+            var secondPersonalChar = _repo.GetSecondPersonalCharacter();
+            var thirdPersonalChar = _repo.GetThirdPersonalCharacter();
 
-                Update_AddPersonalCharInDb(model, firstPersonalChar);
-            }
-            else if (btn.Equals("ثبت ویژگی 2"))
-            {
-                var secondPersonalChar = _repo.GetSecondPersonalCharacter();
+            Update_AddPersonalCharInDb(model.TitleOne, model.ShortDescriptionOne, firstPersonalChar);
+            Update_AddPersonalCharInDb(model.TitleTwo, model.ShortDescriptionTwo, secondPersonalChar);
+            Update_AddPersonalCharInDb(model.TitleThree, model.ShortDescriptionThree, thirdPersonalChar);
 
-                Update_AddPersonalCharInDb(model, secondPersonalChar);
-            }
-            else if (btn.Equals("ثبت ویژگی 3"))
-            {
-                var thirdPersonalChar = _repo.GetThirdPersonalCharacter();
+            //if (model.TitleOne != null || model.)
+            //{
+            //    var firstPersonalChar = _repo.GetFirstPersonalCharacter();
 
-                Update_AddPersonalCharInDb(model, thirdPersonalChar);
-            }
+            //    Update_AddPersonalCharInDb(model, firstPersonalChar);
+            //}
+            //else if (btn.Equals("ثبت ویژگی 2"))
+            //{
+            //    var secondPersonalChar = _repo.GetSecondPersonalCharacter();
+
+            //    Update_AddPersonalCharInDb(model, secondPersonalChar);
+            //}
+            //else if (btn.Equals("ثبت ویژگی 3"))
+            //{
+            //    var thirdPersonalChar = _repo.GetThirdPersonalCharacter();
+
+            //    Update_AddPersonalCharInDb(model, thirdPersonalChar);
+            //}
+
+
             ////this table has one row
             //var allExistingPersonalCharModel = _repo.GetAll();
 
@@ -77,17 +99,17 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        private void Update_AddPersonalCharInDb(PersonalCharacter model, PersonalCharacter PersonalChar)
+        private void Update_AddPersonalCharInDb(string title, string shortDescription, PersonalCharacter PersonalChar)
         {
+            PersonalChar.Title = title;
+            PersonalChar.ShortDescription = shortDescription;
+
             if (PersonalChar == null)
             {
-                _repo.Add(model);
+                _repo.Add(PersonalChar);
             }
             else
             {
-                PersonalChar.Title = model.Title;
-                PersonalChar.ShortDescription = model.ShortDescription;
-
                 _repo.Update(PersonalChar);
             }
         }
