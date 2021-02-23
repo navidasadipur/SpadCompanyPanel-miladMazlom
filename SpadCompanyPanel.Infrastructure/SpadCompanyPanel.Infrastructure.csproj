@@ -66,61 +66,9 @@
     <Compile Include="Helpers\ImageResizer.cs" />
     <Compile Include="Helpers\PasswordHelper.cs" />
     <Compile Include="Helpers\PersianCulture.cs" />
-    <Compile Include="Migrations\202012210849043_Initial.cs" />
-    <Compile Include="Migrations\202012210849043_Initial.Designer.cs">
-      <DependentUpon>202012210849043_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102151137276_restore.bakFile.cs" />
-    <Compile Include="Migrations\202102151137276_restore.bakFile.Designer.cs">
-      <DependentUpon>202102151137276_restore.bakFile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102151353492_test.cs" />
-    <Compile Include="Migrations\202102151353492_test.Designer.cs">
-      <DependentUpon>202102151353492_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102160912049_coverModelChanged.cs" />
-    <Compile Include="Migrations\202102160912049_coverModelChanged.Designer.cs">
-      <DependentUpon>202102160912049_coverModelChanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102161009129_AboutMeModelChanged.cs" />
-    <Compile Include="Migrations\202102161009129_AboutMeModelChanged.Designer.cs">
-      <DependentUpon>202102161009129_AboutMeModelChanged.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102170737506_CategoryAdded.cs" />
-    <Compile Include="Migrations\202102170737506_CategoryAdded.Designer.cs">
-      <DependentUpon>202102170737506_CategoryAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102170859208_GalleryModelAndGalleryCategoryModelRefactor.cs" />
-    <Compile Include="Migrations\202102170859208_GalleryModelAndGalleryCategoryModelRefactor.Designer.cs">
-      <DependentUpon>202102170859208_GalleryModelAndGalleryCategoryModelRefactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102170904239_GalleryRepositoryRefactor.cs" />
-    <Compile Include="Migrations\202102170904239_GalleryRepositoryRefactor.Designer.cs">
-      <DependentUpon>202102170904239_GalleryRepositoryRefactor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102170948005_GalleryModelBugFixed.cs" />
-    <Compile Include="Migrations\202102170948005_GalleryModelBugFixed.Designer.cs">
-      <DependentUpon>202102170948005_GalleryModelBugFixed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102171233347_GalleryCategoryFixed.cs" />
-    <Compile Include="Migrations\202102171233347_GalleryCategoryFixed.Designer.cs">
-      <DependentUpon>202102171233347_GalleryCategoryFixed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102180959017_GalleryInFrontAndPanelWorking.cs" />
-    <Compile Include="Migrations\202102180959017_GalleryInFrontAndPanelWorking.Designer.cs">
-      <DependentUpon>202102180959017_GalleryInFrontAndPanelWorking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102181009404_CharachterModelAndRepoAdded.cs" />
-    <Compile Include="Migrations\202102181009404_CharachterModelAndRepoAdded.Designer.cs">
-      <DependentUpon>202102181009404_CharachterModelAndRepoAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102181930236_GalleryAndGalleryCategoryRepoBugFixed.cs" />
-    <Compile Include="Migrations\202102181930236_GalleryAndGalleryCategoryRepoBugFixed.Designer.cs">
-      <DependentUpon>202102181930236_GalleryAndGalleryCategoryRepoBugFixed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202102200707403_PersonalCharacterAdded.cs" />
-    <Compile Include="Migrations\202102200707403_PersonalCharacterAdded.Designer.cs">
-      <DependentUpon>202102200707403_PersonalCharacterAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202102231431301_test1.cs" />
+    <Compile Include="Migrations\202102231431301_test1.Designer.cs">
+      <DependentUpon>202102231431301_test1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
@@ -156,47 +104,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012210849043_Initial.resx">
-      <DependentUpon>202012210849043_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102151137276_restore.bakFile.resx">
-      <DependentUpon>202102151137276_restore.bakFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102151353492_test.resx">
-      <DependentUpon>202102151353492_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102160912049_coverModelChanged.resx">
-      <DependentUpon>202102160912049_coverModelChanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102161009129_AboutMeModelChanged.resx">
-      <DependentUpon>202102161009129_AboutMeModelChanged.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102170737506_CategoryAdded.resx">
-      <DependentUpon>202102170737506_CategoryAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102170859208_GalleryModelAndGalleryCategoryModelRefactor.resx">
-      <DependentUpon>202102170859208_GalleryModelAndGalleryCategoryModelRefactor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102170904239_GalleryRepositoryRefactor.resx">
-      <DependentUpon>202102170904239_GalleryRepositoryRefactor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102170948005_GalleryModelBugFixed.resx">
-      <DependentUpon>202102170948005_GalleryModelBugFixed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102171233347_GalleryCategoryFixed.resx">
-      <DependentUpon>202102171233347_GalleryCategoryFixed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102180959017_GalleryInFrontAndPanelWorking.resx">
-      <DependentUpon>202102180959017_GalleryInFrontAndPanelWorking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102181009404_CharachterModelAndRepoAdded.resx">
-      <DependentUpon>202102181009404_CharachterModelAndRepoAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102181930236_GalleryAndGalleryCategoryRepoBugFixed.resx">
-      <DependentUpon>202102181930236_GalleryAndGalleryCategoryRepoBugFixed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202102200707403_PersonalCharacterAdded.resx">
-      <DependentUpon>202102200707403_PersonalCharacterAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202102231431301_test1.resx">
+      <DependentUpon>202102231431301_test1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

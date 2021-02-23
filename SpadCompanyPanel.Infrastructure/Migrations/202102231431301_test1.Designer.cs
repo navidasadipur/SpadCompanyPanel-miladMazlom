@@ -7,13 +7,13 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class GalleryRepositoryRefactor : IMigrationMetadata
+    public sealed partial class test1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(GalleryRepositoryRefactor));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(test1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202102170904239_GalleryRepositoryRefactor"; }
+            get { return "202102231431301_test1"; }
         }
         
         string IMigrationMetadata.Source

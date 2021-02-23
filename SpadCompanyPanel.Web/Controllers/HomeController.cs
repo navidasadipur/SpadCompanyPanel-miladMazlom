@@ -87,6 +87,10 @@ namespace SpadCompanyPanel.Web.Controllers
             //Personal character
             ViewBag.PersonalCharacters = _personalCharacterRepo.GetAllPersonalCharacters();
 
+            //video gallery
+            
+            ViewBag.Videos = _galleryVideosRepo.GetAll();
+
             ////filling the galleries of categories with reletive images
             //var galleries = _galleryRepo.GetGalleries();
 

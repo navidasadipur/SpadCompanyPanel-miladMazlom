@@ -31,6 +31,11 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         {
             var personalCharacters = _repo.GetAll().OrderBy(ch => ch.Id);
 
+            if (personalCharacters.Count() == 0)
+            {
+                return View();
+            }
+
             var personalCharacterPanelView = new PersonalCharacterPanelView
             {
                 TitleOne = personalCharacters.OrderBy(ch => ch.Id).FirstOrDefault().Title,
@@ -99,18 +104,24 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        private void Update_AddPersonalCharInDb(string title, string shortDescription, PersonalCharacter PersonalChar)
+        private void Update_AddPersonalCharInDb(string title, string shortDescription, PersonalCharacter personalChar)
         {
-            PersonalChar.Title = title;
-            PersonalChar.ShortDescription = shortDescription;
-
-            if (PersonalChar == null)
+            if (personalChar == null)
             {
-                _repo.Add(PersonalChar);
+                personalChar = new PersonalCharacter()
+                {
+                    Title = title,
+                    ShortDescription = shortDescription,
+                };
+
+                _repo.Add(personalChar);
             }
             else
             {
-                _repo.Update(PersonalChar);
+                personalChar.Title = title;
+                personalChar.ShortDescription = shortDescription;
+
+                _repo.Update(personalChar);
             }
         }
 

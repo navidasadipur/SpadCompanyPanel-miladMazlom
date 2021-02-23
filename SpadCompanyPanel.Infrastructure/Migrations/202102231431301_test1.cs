@@ -3,11 +3,12 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class restorebakFile : DbMigration
+    public partial class test1 : DbMigration
     {
         public override void Up()
         {
-            RenameTable(name: "dbo.ArticleCategories", newName: "Covers");
+            RenameTable(name: "dbo.ArticleCategories", newName: "GalleryCategories");
+            RenameTable(name: "dbo.Certificates", newName: "Covers");
             DropForeignKey("dbo.Articles", "ArticleCategoryId", "dbo.ArticleCategories");
             DropForeignKey("dbo.ArticleComments", "ArticleId", "dbo.Articles");
             DropForeignKey("dbo.ArticleComments", "ParentId", "dbo.ArticleComments");
@@ -29,7 +30,9 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Biography = c.String(nullable: false),
+                        Image = c.String(),
+                        ImageTitle = c.String(),
+                        Biography = c.String(),
                         InsertUser = c.String(),
                         InsertDate = c.DateTime(),
                         UpdateUser = c.String(),
@@ -38,14 +41,36 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Covers", "SubTitle", c => c.String(nullable: false, maxLength: 2400));
-            AlterColumn("dbo.Covers", "Title", c => c.String(nullable: false, maxLength: 700));
+            CreateTable(
+                "dbo.PersonalCharacters",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Title = c.String(maxLength: 400),
+                        ShortDescription = c.String(),
+                        Image = c.String(),
+                        ImageTitle = c.String(),
+                        InsertUser = c.String(),
+                        InsertDate = c.DateTime(),
+                        UpdateUser = c.String(),
+                        UpdateDate = c.DateTime(),
+                        IsDeleted = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            AddColumn("dbo.Covers", "ImageTitle", c => c.String());
+            AddColumn("dbo.Covers", "SubTitle", c => c.String(maxLength: 2400));
+            AddColumn("dbo.Galleries", "GalleryCategoryId", c => c.Int());
+            AlterColumn("dbo.Covers", "Title", c => c.String(maxLength: 700));
+            AlterColumn("dbo.Galleries", "Title", c => c.String());
+            CreateIndex("dbo.Galleries", "GalleryCategoryId");
+            AddForeignKey("dbo.Galleries", "GalleryCategoryId", "dbo.GalleryCategories", "Id");
+            DropColumn("dbo.Covers", "Description");
             DropColumn("dbo.FoodGalleries", "Food_Id");
             DropTable("dbo.Articles");
             DropTable("dbo.ArticleComments");
             DropTable("dbo.ArticleHeadLines");
             DropTable("dbo.ArticleTags");
-            DropTable("dbo.Certificates");
             DropTable("dbo.Foods");
             DropTable("dbo.FoodTypes");
         }
@@ -76,22 +101,6 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
                         Description = c.String(),
                         Image = c.String(),
                         FoodTypeId = c.Int(),
-                        InsertUser = c.String(),
-                        InsertDate = c.DateTime(),
-                        UpdateUser = c.String(),
-                        UpdateDate = c.DateTime(),
-                        IsDeleted = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Certificates",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Image = c.String(),
-                        Title = c.String(nullable: false),
-                        Description = c.String(nullable: false),
                         InsertUser = c.String(),
                         InsertDate = c.DateTime(),
                         UpdateUser = c.String(),
@@ -172,8 +181,15 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
                 .PrimaryKey(t => t.Id);
             
             AddColumn("dbo.FoodGalleries", "Food_Id", c => c.Int());
-            AlterColumn("dbo.Covers", "Title", c => c.String(nullable: false, maxLength: 400));
+            AddColumn("dbo.Covers", "Description", c => c.String(nullable: false));
+            DropForeignKey("dbo.Galleries", "GalleryCategoryId", "dbo.GalleryCategories");
+            DropIndex("dbo.Galleries", new[] { "GalleryCategoryId" });
+            AlterColumn("dbo.Galleries", "Title", c => c.String(nullable: false));
+            AlterColumn("dbo.Covers", "Title", c => c.String(nullable: false));
+            DropColumn("dbo.Galleries", "GalleryCategoryId");
             DropColumn("dbo.Covers", "SubTitle");
+            DropColumn("dbo.Covers", "ImageTitle");
+            DropTable("dbo.PersonalCharacters");
             DropTable("dbo.AboutMes");
             CreateIndex("dbo.Foods", "FoodTypeId");
             CreateIndex("dbo.FoodGalleries", "Food_Id");
@@ -191,7 +207,8 @@ namespace SpadCompanyPanel.Infrastructure.Migrations
             AddForeignKey("dbo.ArticleComments", "ParentId", "dbo.ArticleComments", "Id");
             AddForeignKey("dbo.ArticleComments", "ArticleId", "dbo.Articles", "Id", cascadeDelete: true);
             AddForeignKey("dbo.Articles", "ArticleCategoryId", "dbo.ArticleCategories", "Id");
-            RenameTable(name: "dbo.Covers", newName: "ArticleCategories");
+            RenameTable(name: "dbo.Covers", newName: "Certificates");
+            RenameTable(name: "dbo.GalleryCategories", newName: "ArticleCategories");
         }
     }
 }
