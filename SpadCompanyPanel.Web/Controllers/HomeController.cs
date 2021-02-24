@@ -61,6 +61,7 @@ namespace SpadCompanyPanel.Web.Controllers
             {
                 return View();
             }
+
             //cover repository has one row
             ViewBag.CoverTitle = _coverRepo.GetFirstCover().Title;
             ViewBag.CoverSubTitle = _coverRepo.GetFirstCover().SubTitle;

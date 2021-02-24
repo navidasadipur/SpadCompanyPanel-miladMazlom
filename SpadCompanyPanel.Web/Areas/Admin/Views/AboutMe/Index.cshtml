@@ -49,11 +49,14 @@
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.Id)
+
+
         <div class="card-body">
+            <img src="/Files/GalleryImages/@Model.Image" alt="@Model.ImageTitle" class="img-thumbnail rounded mx-auto d-block">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.Biography, new { })
-                @Html.TextAreaFor(m => m.Biography, new { @class = "form-control" })
+                @Html.TextAreaFor(m => m.Biography, new { @class = "form-control", rows = "10" })
                 @Html.ValidationMessageFor(model => model.Biography, "", new { @class = "form-text text-danger" })
             </div>
         </div>
@@ -62,8 +65,27 @@
             <input type="submit" value="ثبت" class="btn btn-primary mr-2" />
         </div>
 
-    <!-- Modal -->
-    @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+        <!-- Modal -->
+        @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" id="myModalHeader">
+                            <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i aria-hidden="true" class="ki ki-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="myModalBody">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <!-- Modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header" id="myModalHeader">
@@ -77,28 +99,9 @@
                     </div>
                 </div>
             </div>
-        </div>*@
-    <!-- Modal -->
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" id="myModalHeader">
-                    <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i aria-hidden="true" class="ki ki-close"></i>
-                    </button>
-                </div>
-                <div class="modal-body" id="myModalBody">
-                    ...
-                </div>
-            </div>
         </div>
-    </div>
-    <!-- Modal -->
-}
+        <!-- Modal -->
+    }
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")

@@ -52,6 +52,43 @@
     <!-- color scheme -->
     <link id="colors" href="/Content/client/css/colors/scheme-01.css" rel="stylesheet" type="text/css" />
     <link href="/Content/client/css/coloring.css" rel="stylesheet" type="text/css" />
+
+    @*<style>
+        .topbackground {
+            background: url(../Content/client/images/background/1.jpg) 50% 0px / cover;
+        }
+
+        /* Extra small devices (phones, 600px and down) */
+        @@media only screen and (max-width: 800px) {
+            .topbackground {
+                background-image: url(../Content/client/images/background/1mobile.jpg);
+            }
+
+            .myheadertext {
+                margin-top: 500px;
+                padding-top: 20px;
+            }
+        }
+    </style>*@
+
+    @*<script>
+        onload = function () {
+            var div = document.getElementsByClassName(topbackground);
+            var a = "50%";
+            var b = "0px";
+            div.style.backgroundImage = 'url(../Content/client/images/background/1.jpg)';
+
+            var div2 = document.getElementsByClassName(topbackground);
+        };
+
+        <text>man</text>
+        var coverImagePath = <text>../Content/client/images/background/1.jpg</text>;
+        var test = <text>../Content/client/images/background/1mobile.jpg</text>;
+    </script>
+
+    <script type="text/javascript">
+        document.write('<div style="background-image:url(../Content/client/images/background/1.jpg)"></div>')
+    </script>*@
 </head>
 
 <body>
@@ -548,50 +585,50 @@
             </section>
             <!-- section close -->
 
-            <div id="loader-area">
-                <div class="container">
-                    <div class="project-load"></div>
+            @foreach (var item in ViewBag.Videos)
+            {
+                <div id="loader-area">
+                    <div class="container">
+                        <div class="project-load"></div>
+                    </div>
+                </div>
+                <video width="100%" height="100%" controls>
+                    <source src="/Files/GalleryVideos/@item.Video">
+                </video>
+            }
+
+            @*<section>
+            <div class="container">
+                <div class="section-header-left mt-5">
+                    <h3 class="text-light-black header-title title">
+                        <a href="gallery.html" class="text-dark">گالری ویدئو</a>
+                    </h3>
+                </div>
+                <div class="row">
+                    @foreach (var item in ViewBag.Videos)
+                    {
+                        <div class="col-md-4 col-sm-6 col-12 mb-4">
+                            <a href="#lightbox" class="lightbox-toggle"
+                               data-lightbox-type="video"
+                               style="background-image: url(/Files/GalleryImages/@item.Image);"
+                               data-lightbox-content="/Files/GalleryVideos/@item.Video">
+
+
+                                <div class="player-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                    </svg>
+                                </div>
+
+                            </a>
+
+                        </div>
+
+                    }
                 </div>
             </div>
-
-
-            <video width="100%" height="100%" controls>
-                <source src="/Content/client/images/portfolio/bazigari.mp4">
-            </video>
-
-
-            <section>
-                <div class="container">
-                    <div class="section-header-left mt-5">
-                        <h3 class="text-light-black header-title title">
-                            <a href="gallery.html" class="text-dark">گالری ویدئو</a>
-                        </h3>
-                    </div>
-                    <div class="row">
-                        @foreach (var item in ViewBag.Videos)
-                        {
-                            <div class="col-md-4 col-sm-6 col-12 mb-4">
-                                <a href="#lightbox" class="lightbox-toggle"
-                                   data-lightbox-type="video"
-                                   style="background-image: url(/Files/GalleryImages/@item.Image);"
-                                   data-lightbox-content="/Files/GalleryVideos/@item.Video">
-
-
-                                    <div class="player-icon">
-                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                                        </svg>
-                                    </div>
-
-                                </a>
-
-                            </div>
-
-                        }
-                    </div>
-                </div>
-            </section>
+        </section>*@
 
 
             <section onclick="closemenu() " id="section-blog" class="text-light" data-bgcolor="#008477">

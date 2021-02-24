@@ -45,6 +45,14 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 ShortDescriptionOne = personalCharacters.OrderBy(ch => ch.Id).FirstOrDefault().ShortDescription,
                 ShortDescriptionTwo = personalCharacters.OrderBy(ch => ch.Id).Skip(1).FirstOrDefault().ShortDescription,
                 ShortDescriptionThree = personalCharacters.OrderBy(ch => ch.Id).Skip(2).FirstOrDefault().ShortDescription,
+
+                ImageOne = personalCharacters.OrderBy(ch => ch.Id).FirstOrDefault().Image,
+                ImageTwo = personalCharacters.OrderBy(ch => ch.Id).Skip(1).FirstOrDefault().Image,
+                ImageThree = personalCharacters.OrderBy(ch => ch.Id).Skip(2).FirstOrDefault().Image,
+
+                ImageTitleOne = personalCharacters.OrderBy(ch => ch.Id).FirstOrDefault().ImageTitle,
+                ImageTitleTwo = personalCharacters.OrderBy(ch => ch.Id).Skip(1).FirstOrDefault().ImageTitle,
+                ImageTitleThree = personalCharacters.OrderBy(ch => ch.Id).Skip(2).FirstOrDefault().ImageTitle,
             };
 
             return View(personalCharacterPanelView);

@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.SubTitle, new { })
-                @Html.TextAreaFor(m => m.SubTitle, new { @class = "form-control" })
+                @Html.TextAreaFor(m => m.SubTitle, new { @class = "form-control", rows = "5" })
                 @Html.ValidationMessageFor(model => model.SubTitle, "", new { @class = "form-text text-danger" })
             </div>
             <div class="card-footer">
