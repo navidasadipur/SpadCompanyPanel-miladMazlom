@@ -38,7 +38,12 @@ namespace SpadCompanyPanel.Infrastructure
         {
             var user = GetCurrentUser();
             entity.InsertDate = DateTime.Now;
-            entity.InsertUser = user.UserName;
+
+            if (user != null)
+            {
+                entity.InsertUser = user.UserName;
+            }
+
             var ent = entity.GetType().Name;
 
             context.Set<TEntity>().Add(entity);

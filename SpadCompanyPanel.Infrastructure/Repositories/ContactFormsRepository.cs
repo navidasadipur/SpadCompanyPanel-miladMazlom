@@ -25,5 +25,11 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
         {
             return _context.Services.Where(e=>e.IsDeleted == false).ToList();
         }
+
+
+        public List<ContactForm> GetAllContactForms()
+        {
+            return _context.ContactForms.Where(a => a.IsDeleted == false).OrderByDescending(a => a.InsertDate).ToList();
+        }
     }
 }

@@ -108,6 +108,65 @@ namespace SpadCompanyPanel.Web.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(ContactForm contactForm)
+        {
+
+            if (ModelState.IsValid)
+            {
+                _contactFormRepo.Add(contactForm);
+
+                return RedirectToAction("Index");
+            }
+
+            return View("Index");
+        }
+
+        public ActionResult ContactUsSummary()
+        {
+            //return Redirect("/Admin/Dashboard");
+
+
+            if (_coverRepo.GetCount() == 0)
+            {
+                return View();
+            }
+
+            //cover repository has one row
+            ViewBag.CoverTitle = _coverRepo.GetFirstCover().Title;
+            ViewBag.CoverSubTitle = _coverRepo.GetFirstCover().SubTitle;
+            ViewBag.CoverImage = _coverRepo.GetFirstCover().Image;
+
+            if (_aboutMeRepo.GetCount() == 0)
+            {
+                return View();
+            }
+            //AboutMe repository has one row
+            ViewBag.Biography = _aboutMeRepo.GetFirstAboutMe().Biography;
+            ViewBag.BiographyImage = _aboutMeRepo.GetFirstAboutMe().Image;
+
+            var categories = _galleryCategoryRepo.GetAllGalleryCategories();
+
+            foreach (var category in categories)
+            {
+                var test = category.Galleries.Count;
+            }
+
+            //categories
+            ViewBag.Categories = _galleryCategoryRepo.GetAllGalleryCategories();
+
+            //Personal character
+            ViewBag.PersonalCharacters = _personalCharacterRepo.GetAllPersonalCharacters();
+
+            //video gallery
+
+            ViewBag.Videos = _galleryVideosRepo.GetAll();
+
+            return View();
+        }
+
+
         public ActionResult Navbar()
         {
             ViewBag.Phone = _contentRepo.GetStaticContentDetail((int) StaticContents.Phone).ShortDescription;
@@ -138,10 +197,10 @@ namespace SpadCompanyPanel.Web.Controllers
             var galleryContent = _galleryRepo.GetAll();
             return PartialView(galleryContent);
         }
-        public ActionResult ContactUsForm()
-        {
-            return PartialView();
-        }
+        //public ActionResult ContactUsForm()
+        //{
+        //    return PartialView();
+        //}
         [HttpPost]
         public ActionResult ContactUsForm(ContactForm contactForm)
         {
@@ -153,10 +212,10 @@ namespace SpadCompanyPanel.Web.Controllers
             return View(contactForm);
         }
 
-        public ActionResult ContactUsSummary()
-        {
-            return View();
-        }
+        //public ActionResult ContactUsSummary()
+        //{
+        //    return View();
+        //}
 
         public ActionResult OurTeamSection()
         {
