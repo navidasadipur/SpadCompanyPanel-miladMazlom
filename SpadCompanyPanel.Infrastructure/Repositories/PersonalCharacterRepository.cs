@@ -19,22 +19,22 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
 
         public PersonalCharacter GetFirstPersonalCharacter()
         {
-            return _context.PersonalCharacter.FirstOrDefault();
+            return _context.PersonalCharacters.FirstOrDefault();
         }
 
         public PersonalCharacter GetSecondPersonalCharacter()
         {
-            return _context.PersonalCharacter.OrderBy(c => c.Id).Skip(1).FirstOrDefault();
+            return _context.PersonalCharacters.OrderBy(c => c.Id).Skip(1).FirstOrDefault();
         }
 
         public PersonalCharacter GetThirdPersonalCharacter()
         {
-            return _context.PersonalCharacter.OrderBy(c => c.Id).Skip(2).FirstOrDefault();
+            return _context.PersonalCharacters.OrderBy(c => c.Id).Skip(2).FirstOrDefault();
         }
 
         public List<PersonalCharacter> GetAllPersonalCharacters()
         {
-            return _context.PersonalCharacter.Where(ch => ch.IsDeleted == false).OrderBy(ch => ch.Id).ToList();
+            return _context.PersonalCharacters.Where(ch => ch.IsDeleted == false).OrderBy(ch => ch.Id).ToList();
         }
         //public AboutMe GetAll()
         //{

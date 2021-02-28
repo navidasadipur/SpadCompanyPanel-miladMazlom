@@ -15,7 +15,7 @@
         <h3 class="card-title">
             ویرایش کاور سایت
         </h3>
-        <div class="card-toolbar">
+        @*<div class="card-toolbar">
             <!--begin::Button-->
             <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
                 <span class="svg-icon svg-icon-md">
@@ -29,7 +29,7 @@
                 </span>	تغییر عکس کاور
             </a>
             <!--end::Button-->
-        </div>
+        </div>*@
     </div>
     @using (Html.BeginForm())
     {

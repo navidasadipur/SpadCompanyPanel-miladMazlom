@@ -1,0 +1,149 @@
+﻿@model MyContactInfo
+@using Kendo.Mvc.UI;
+@using SpadCompanyPanel.Infrastructure.Helpers;
+@using SpadCompanyPanel.Core.Models;
+@{
+    ViewBag.Title = "اطلاعات تماس من";
+}
+<input type="hidden" id="nav_active" value="my_contact_info">
+<input type="hidden" id="nav_item_active" value="my_contact_info">
+<div class="card card-custom">
+    @*<div class="card-header flex-wrap border-0 pt-6 pb-0">
+            <div class="card-title">
+                <h3 class="card-label">
+                    @ViewBag.Title
+                    <span class="d-block text-muted pt-2 font-size-sm">ویرایش کاور سایت</span>
+                </h3>
+            </div>
+            <div class="card-toolbar">
+                <a href="/Admin/Articles" class="btn btn-light-success" style="margin-left:20px">
+                    <i class="flaticon2-arrow"></i> بازگشت
+                </a>
+            </div>
+        </div>*@
+
+</div>
+@*<div class="col-lg-6">*@
+<div class="card card-custom gutter-b example example-compact">
+    <div class="card-header">
+        <h3 class="card-title">
+            ویرایش  درباره من
+        </h3>
+        @*<div class="card-toolbar">
+                <!--begin::Button-->
+                <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
+                    <span class="svg-icon svg-icon-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <circle fill="#000000" cx="9" cy="15" r="6" />
+                                <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+                            </g>
+                        </svg><!--end::Svg Icon-->
+                    </span>	تغییر عکس بیوگرافی
+                </a>
+                <!--end::Button-->
+            </div>*@
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.Id)
+        <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "form-text text-danger" })
+            </div>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, new { })
+                @Html.TextAreaFor(model => model.Address, new { @class = "form-control", rows = "2" })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "form-text text-danger" })
+            </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control " } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "form-text text-danger" })
+            </div>
+        </div>
+        <div class="card-footer">
+            @*<a href="@Url.Action("Index")" class="btn btn-secondary">انصراف</a>*@
+            <input type="submit" value="ثبت" class="btn btn-primary mr-2" />
+        </div>
+
+        <!-- Modal -->
+        @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" id="myModalHeader">
+                            <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i aria-hidden="true" class="ki ki-close"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="myModalBody">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        <!-- Modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" id="myModalHeader">
+                        <h5 class="modal-title" id="myModalLabel">Modal Title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i aria-hidden="true" class="ki ki-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="myModalBody">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script>
+
+            $(document).ready(function () {
+                $('.k-i-filter').removeClass("k-i-filter").addClass("k-icon k-i-more-vertical");
+            });
+        </script>
+        <script>
+            function btnCreate() {
+                $.get("/Admin/AboutMe/Create", function (result) {
+                    $("#myModal").modal();
+                    $("#myModalLabel").html("افرودن تصویر");
+                    $("#myModalHeader");
+                    $("#myModalBody").html(result);
+                });
+            }
+            function btnEdit(id) {
+                $.get("/Admin/AboutMe/Edit/" + id, function (result) {
+                    $("#myModal").modal();
+                    $("#myModalLabel").html("ویرایش تصویر");
+                    $("#myModalHeader");
+                    $("#myModalBody").html(result);
+                });
+            }
+            function btnDelete(id) {
+                $.get("/Admin/AboutMe/Delete/" + id, function (result) {
+                    $("#myModal").modal();
+                    $("#myModalLabel").html("حذف تصویر");
+                    $("#myModalHeader");
+                    $("#myModalBody").html(result);
+                });
+            }
+        </script>
+    }

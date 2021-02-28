@@ -19,9 +19,13 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             _repo = repo;
             _categoryRepo = categoryRepo;
         }
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View(_repo.GetAll());
+            var allCategories = _repo.getGalleriesByCategoryId(id);
+
+            ViewBag.CategoryTitle = _categoryRepo.Get(id).Title;
+
+            return View(allCategories);
         }
 
         public ActionResult Create()

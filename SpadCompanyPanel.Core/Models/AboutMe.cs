@@ -14,7 +14,7 @@ namespace SpadCompanyPanel.Core.Models
         public string Image { get; set; }
 
         [Display(Name = "عنوان تصویر")]
-        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string ImageTitle { get; set; }
 
         [MaxLength(10000)]

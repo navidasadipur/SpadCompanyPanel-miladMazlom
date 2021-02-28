@@ -11,7 +11,7 @@ namespace SpadCompanyPanel.Core.Models
         [Display(Name = "تصویر")]
         public string Image { get; set; }
         [Display(Name = "عنوان تصویر")]
-        //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Title { get; set; }
         public string InsertUser { get; set; }
         public DateTime? InsertDate { get; set; }

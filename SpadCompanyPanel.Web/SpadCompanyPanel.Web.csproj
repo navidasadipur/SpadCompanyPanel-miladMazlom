@@ -190,6 +190,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\MyContactInfoController.cs" />
     <Compile Include="Areas\Admin\Controllers\PersonalCharacterController.cs" />
     <Compile Include="Areas\Admin\Controllers\GalleryCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticleCategoriesController.cs" />
@@ -2858,6 +2859,10 @@
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create2.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create3.cshtml" />
     <Content Include="Content\client\js\bootstrap.min.js.map" />
+    <Content Include="Areas\Admin\Views\MyContactInfo\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MyContactInfo\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\MyContactInfo\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MyContactInfo\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

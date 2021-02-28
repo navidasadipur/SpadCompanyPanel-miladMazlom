@@ -74,9 +74,18 @@
     <Compile Include="Migrations\202102270648283_contactFormModified.Designer.cs">
       <DependentUpon>202102270648283_contactFormModified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202102280656059_MyContactInfosAdded.cs" />
+    <Compile Include="Migrations\202102280656059_MyContactInfosAdded.Designer.cs">
+      <DependentUpon>202102280656059_MyContactInfosAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102280857042_somAttributesinModelsFixed.cs" />
+    <Compile Include="Migrations\202102280857042_somAttributesinModelsFixed.Designer.cs">
+      <DependentUpon>202102280857042_somAttributesinModelsFixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\MyContactInfoRepository.cs" />
     <Compile Include="Repositories\PersonalCharacterRepository.cs" />
     <Compile Include="Repositories\AboutMeRepository.cs" />
     <Compile Include="Repositories\GalleryCategoryRepository.cs" />
@@ -113,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102270648283_contactFormModified.resx">
       <DependentUpon>202102270648283_contactFormModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102280656059_MyContactInfosAdded.resx">
+      <DependentUpon>202102280656059_MyContactInfosAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102280857042_somAttributesinModelsFixed.resx">
+      <DependentUpon>202102280857042_somAttributesinModelsFixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

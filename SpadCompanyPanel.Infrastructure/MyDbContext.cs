@@ -40,6 +40,8 @@ namespace SpadCompanyPanel.Infrastructure
 
         public DbSet<GalleryCategory> GalleryCategories { get; set; }
 
-        public DbSet<PersonalCharacter> PersonalCharacter { get; set; }
+        public DbSet<PersonalCharacter> PersonalCharacters { get; set; }
+
+        public DbSet<MyContactInfo> MyContactInfos { get; set; }
     }
 }

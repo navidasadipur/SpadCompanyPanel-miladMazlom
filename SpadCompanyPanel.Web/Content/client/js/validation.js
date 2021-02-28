@@ -1,4 +1,4 @@
-$(document).ready(function() {
+﻿$(document).ready(function() {
     $("#send_message").click(function(a) {
 		
         a.preventDefault();
@@ -15,21 +15,31 @@ $(document).ready(function() {
         } else $("#name").removeClass("error_input");
         if (0 == d.length || "-1" == d.indexOf("@")) {
             var b = !0;
-            $("#email").addClass("error_input")
+            $("#email").addClass("error_input");
+            $("#email").append("test");
         } else $("#email").removeClass("error_input");
         if (0 == e.length) {
             var b = !0;
             $("#phone").addClass("error_input")
+            $("#phone").append("test");
         } else $("#phone").removeClass("error_input");
         if (0 == f.length) {
             var b = !0;
             $("#message").addClass("error_input")
+            $("#email").append("test");
         } else $("#message").removeClass("error_input");
         0 == b && ($("#send_message").attr({
             disabled: "true",
             value: "Sending..."
-        }), $.post("/Home/Index", $("#contact_form").serialize(), function(a) {
-            "sent" == a ? ($("#submit").remove(), $("#mail_success").fadeIn(500)) : ($("#mail_fail").fadeIn(500), $("#send_message").removeAttr("disabled").attr("value", "Send The Message"))
+        }), $.post("/Home/Index", $("#contact_form").serialize(), function (a) {
+            if (a.success) {
+                $("#submit").remove();
+                $("#mail_success").fadeIn(500)
+            }
+            else {
+                $("#mail_fail").fadeIn(500);
+                $("#send_message").removeAttr("disabled").attr("value", "تلاش دوباره")
+            }
         }))
     })
 });

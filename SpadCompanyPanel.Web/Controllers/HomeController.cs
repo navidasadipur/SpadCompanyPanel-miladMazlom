@@ -25,6 +25,7 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly AboutMeRepository _aboutMeRepo;
         private readonly GalleryCategoryRepository _galleryCategoryRepo;
         private readonly PersonalCharacterRepository _personalCharacterRepo;
+        private readonly MyContactInfoRepository _myContactInfoRepo;
 
         public HomeController( StaticContentDetailsRepository contentRepo, 
             GalleriesRepository galleryRepo,
@@ -37,7 +38,8 @@ namespace SpadCompanyPanel.Web.Controllers
             CoverRepository coverRepo, 
             AboutMeRepository aboutMeRepo,
             GalleryCategoryRepository galleryCategoryRepo,
-            PersonalCharacterRepository personalCharacterRepo
+            PersonalCharacterRepository personalCharacterRepo,
+            MyContactInfoRepository myContactInfoRepo
             )
         {
             _contentRepo = contentRepo;
@@ -52,6 +54,7 @@ namespace SpadCompanyPanel.Web.Controllers
             this._aboutMeRepo = aboutMeRepo;
             this._galleryCategoryRepo = galleryCategoryRepo;
             this._personalCharacterRepo = personalCharacterRepo;
+            this._myContactInfoRepo = myContactInfoRepo;
         }
         public ActionResult Index()
         {
@@ -89,9 +92,11 @@ namespace SpadCompanyPanel.Web.Controllers
             ViewBag.PersonalCharacters = _personalCharacterRepo.GetAllPersonalCharacters();
 
             //video gallery
-            
             ViewBag.Videos = _galleryVideosRepo.GetAll();
 
+            //my contact info 
+            ViewBag.MyContactInfo = _myContactInfoRepo.GetFirstMyContactInfo();
+            
             ////filling the galleries of categories with reletive images
             //var galleries = _galleryRepo.GetGalleries();
 
@@ -117,10 +122,10 @@ namespace SpadCompanyPanel.Web.Controllers
             {
                 _contactFormRepo.Add(contactForm);
 
-                return RedirectToAction("Index");
+                return Json(new {success = true });
             }
 
-            return View("Index");
+            return Json(new { success = false });
         }
 
         public ActionResult ContactUsSummary()
