@@ -115,7 +115,7 @@ namespace SpadCompanyPanel.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(ContactForm contactForm)
+        public ActionResult PostContact(ContactForm contactForm)
         {
 
             if (ModelState.IsValid)

@@ -9,19 +9,6 @@
 
 }
 
-@*@Html.Action("HomeSlider", "Home")*@
-@*<section class="ex-collection section-padding-special">
-    <div class="container">*@
-@*@Html.Action("Gallery", "Home")*@
-@*@Html.Action("CompanyHistory", "Home")*@
-@*</div>*@
-@*@Html.Action("OurTeamSection", "Home")*@
-@*@Html.Action("Testimonials", "Home")*@
-@*</section>*@
-@*@section Scripts {*@
-@*@Scripts.Render("~/bundles/jqueryval")*@
-@*}*@
-
 <!DOCTYPE html>
 <html lang="fa">
 
@@ -55,42 +42,6 @@
     <link id="colors" href="/Content/client/css/colors/scheme-01.css" rel="stylesheet" type="text/css" />
     <link href="/Content/client/css/coloring.css" rel="stylesheet" type="text/css" />
 
-    @*<style>
-        .topbackground {
-            background: url(../Content/client/images/background/1.jpg) 50% 0px / cover;
-        }
-
-        /* Extra small devices (phones, 600px and down) */
-        @@media only screen and (max-width: 800px) {
-            .topbackground {
-                background-image: url(../Content/client/images/background/1mobile.jpg);
-            }
-
-            .myheadertext {
-                margin-top: 500px;
-                padding-top: 20px;
-            }
-        }
-    </style>*@
-
-    @*<script>
-        onload = function () {
-            var div = document.getElementsByClassName(topbackground);
-            var a = "50%";
-            var b = "0px";
-            div.style.backgroundImage = 'url(../Content/client/images/background/1.jpg)';
-
-            var div2 = document.getElementsByClassName(topbackground);
-        };
-
-        <text>man</text>
-        var coverImagePath = <text>../Content/client/images/background/1.jpg</text>;
-        var test = <text>../Content/client/images/background/1mobile.jpg</text>;
-    </script>
-
-    <script type="text/javascript">
-        document.write('<div style="background-image:url(../Content/client/images/background/1.jpg)"></div>')
-    </script>*@
 </head>
 
 <body>
@@ -208,7 +159,7 @@
                         <div class="col-lg-6 mb-sm-30 text-center">
                             <div class="de-images">
                                 <img style="width: 700px; height: 100%;" class="img-fluid wow fadeInRight"
-                                     src="/Files/GalleryImages/@ViewBag.BiographyImage" @*"/Content/client/images/portfolio/aboutnew.jpeg"*@ alt="" />
+                                     src="/Files/GalleryImages/@ViewBag.BiographyImage" alt="" />
                             </div>
                         </div>
 
@@ -216,41 +167,6 @@
                             <h2>درباره <span class="id-color">من</span></h2>
                             <p class="">
                                 @ViewBag.Biography
-                                @*سید میلاد مظلوم در سال ۱۳۶۹ خورشیدی در استان گیلان و در شهرستان صومعه سرا چشم به جان گشود
-                                    او در همان زمان کودکی علاقه زیادی به بازیگری داشت و با هم سن سالهای خود کار نمایش انجام میداد.
-                                    اون در همان دوران کودکی در مدارس در ایام دهه فجر کارگردانی و بازیگری را بصورت حرفه ای انجام میداد و
-                                    بیشتر قالب طنز کار میکرد واز این باب
-                                    مورد علاقه همه افراد مدرسه و معلمان بود.
-                                    او تا دانشگاه پیش رفت و در بین دو راهی سربازی و دانشگاه قرار گرفت.
-                                    او بجای ادامه تحصیل خدمت سربازی را برگزید و به خدمت سربازی رفت
-                                    اون در آنجا هم آرام نبود
-                                    و دوران خدمت هم بازیگری را ادامه میداد و در تمامیه جشنواره ها حضور گسترده داشت و با هماهنگی مسئولان
-                                    ذیربط شروع به ساخت کلیپ های ارزشی میکرد
-                                    که برا همه بسیار لذت بخش بود
-                                    وی بخاطر داشتن استایل عالی در زمینه مدلینگ هم فعالیت گسترده ای دارد
-                                    یکی از مهمترین کارهای وی در سال ۱۳۹۶ بود که او در نقش یک مدافع حرم در استان اصفهان با کارگرانی آقای
-                                    شیرانی
-                                    بازی کرد
-                                    این کار به صورت نماهنگی در شبکه های سراسری پخش شد و به همین دلیل وی محبوبیت چشم گیری در فضای مجازی بدست
-                                    آورد
-                                    و در جشنواره فیلم فجر در شهرستان صومعه سرا
-                                    جایزه بهترین فیلم و نماهنگ را به خود اختصاص داد.
-                                    و در ایام کرونا شروع به ساختن کلیپ( انسانیت )کرد
-                                    که این کلیپ بخاطر احتکار و نبود ماسک در اوایل کرونا درست شد.
-                                    این موضوع که با کارگردانی و بازیگری خود او انجام شد موضوع از آنجا شروع شد که
-                                    او به دارو خانه میرود و از فروشنده درخواست ماسک میکند
-                                    فروشنده جواب رد به او میدهد
-                                    و او با عصبانیت کامل از آنجا بیرون می آید
-                                    در بیرون پدر و پسری را میبیند که باهم صحبت میکند
-                                    پسر به پدر میگوید بابا من ماسک میخواهم ، پدر جواب میگوید پسرم ماسک نیست و اگر باشد پولم نمی رسد که آن را
-                                    بخرم.
-                                    پسر می گوید، پدر اگر ما ماسک نزنیم میمیریم؟؟
-                                    و پدر با ناراحتی و حالت بغض پسرش را بفل میکند
-                                    سید با دیدن این صحنه اشک از چشمانش سرازیر می شود .
-                                    در همان لحظه اون بفکر ساخت ماسک میوفتدو با دوستانش شروع به تولید ماسک رایگان میکند و در اختیار دیگران
-                                    قرار میدهد.
-                                    وی الان در شهرستان صومعه سرا و در شهر گوراب زرمیخ ساکن است
-                                    وی دارای دو فرزند به نام عبدالحسین و فاطمه سادات است و مانند دیگران زندگی معمولی دارد*@
                             </p>
                             <div class="spacer-10"></div>
                             <a href="#section-contact" class="btn-border wow fadeInUp" data-wow-delay="1s">تماس با من</a>
@@ -318,8 +234,6 @@
                 </div>
             </section>
 
-
-
             <!-- section begin -->
             <!-- section close -->
             <!-- section begin -->
@@ -345,11 +259,7 @@
                                         <li><a href="#" data-filter=".@category.Id">@category.Title </a></li>
                                     }
                                 }
-
-                                @*<li><a href="#" data-filter=".modeling">مدلینگ</a></li>
-                                    <li><a href="#" data-filter=".film">بازیگری</a></li>
-                                    <li><a href="#" data-filter=".mazhabi">مذهبی</a></li>
-                                    <li><a href="#" data-filter=".website">شهادت</a></li>*@
+                                \
                             </ul>
 
                             <div id="gallery" class="gallery full-gallery de-gallery pf_full_width pf_3_cols grid sequence">
@@ -378,206 +288,6 @@
                                     }
                                 }
 
-                                @*<div class="item all gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="@*/Content/client/images/portfolio/1.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item all gallery-item" data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/2.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item all gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/3.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item all gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/4.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item all gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/5.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item modeling gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/6.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item modeling gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/7.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item modeling gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/8.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item modeling gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/9.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item modeling gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/10.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item film gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/11.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item film gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/12.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item film gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/13.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item film gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/14.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item film gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/15.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item mazhabi gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/16.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item mazhabi gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/17.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item mazhabi gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/18.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item mazhabi gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/19.jfif" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="item mazhabi gallery-item " data-value="#">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name"></span>
-                                                </span>
-                                            </span>
-                                            <img src="/Content/client/images/portfolio/20.jfif" alt="" />
-                                        </div>
-                                    </div>*@
                                 <!-- close gallery item -->
                             </div>
                             <!-- portfolio filter close -->
@@ -601,40 +311,6 @@
                     </video>
                 }
             }
-
-            @*<section>
-                    <div class="container">
-                        <div class="section-header-left mt-5">
-                            <h3 class="text-light-black header-title title">
-                                <a href="gallery.html" class="text-dark">گالری ویدئو</a>
-                            </h3>
-                        </div>
-                        <div class="row">
-                            @foreach (var item in ViewBag.Videos)
-                            {
-                                <div class="col-md-4 col-sm-6 col-12 mb-4">
-                                    <a href="#lightbox" class="lightbox-toggle"
-                                       data-lightbox-type="video"
-                                       style="background-image: url(/Files/GalleryImages/@item.Image);"
-                                       data-lightbox-content="/Files/GalleryVideos/@item.Video">
-
-
-                                        <div class="player-icon">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                                            </svg>
-                                        </div>
-
-                                    </a>
-
-                                </div>
-
-                            }
-                        </div>
-                    </div>
-                </section>*@
-
 
             <section onclick="closemenu() " id="section-blog" class="text-light" data-bgcolor="#008477">
                 <div class="container  py-5 my-3">
@@ -676,56 +352,6 @@
                             }
                         }
 
-
-                        @*<div class="col-lg-4 col-md-6 mb30">
-                                <div class="bloglist item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            <img width="400px" height="400px" alt="archive" src="/Content/client/images/portfolio/copy (1).jfif" />
-                                            <div class="post-info">
-                                                <div class="inner text-center">
-                                                    <span class="post-author">نیم نگاهی به آینده</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="#"> نیم نگاهی به آینده</a></h4>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                                                چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون
-                                                بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                                برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
-                                                هدف بهبود ابزارهای کاربردی می باشد.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30">
-                                <div class="bloglist item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            <img width="400px" height="400px" alt="archive" src="/Content/client/images/portfolio/copy (3).jfif" />
-                                            <div class="post-info">
-                                                <div class="inner text-center">
-                                                    <span class="post-author ">ثابت قدم در راه اخلاص</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="#">ثابت قدم در راه اخلاص</a></h4>
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                                                چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون
-                                                بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و
-                                                برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با
-                                                هدف بهبود ابزارهای کاربردی می باشد.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>*@
                     </div>
                 </div>
             </section>
@@ -792,52 +418,6 @@
                             </div>
                         </div>
                     </form>
-                    @*<script>
-                        $.validator.unobtrusive.parse("#form");
-                    </script>*@
-
-
-                    @*<form name="contactForm" id="contact_form" class="row form-default" method="post" action="email.php">
-                            <div class="col-md-6">
-                                <div class="field-set">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="نام" />
-
-                                    <div class="line-fx"></div>
-                                </div>
-
-                                <div class="field-set">
-                                    <input type="text" name="email" id="email" class="form-control" placeholder="ایمیل" />
-                                    <div class="line-fx"></div>
-                                </div>
-
-                                <div class="field-set">
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="شماره تلفن" />
-                                    <div class="line-fx"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="field-set">
-                                    <textarea name="message" id="message" class="form-control" placeholder="متن پیام"></textarea>
-                                    <div class="line-fx"></div>
-                                </div>
-                            </div>
-
-                            <div class="spacer-single"></div>
-
-                            <div class="col-md-12 text-center">
-                                <div id="submit">
-                                    <input type="submit" id="send_message" value="ارسال" class="btn btn-custom color-2" />
-                                </div>
-                                <div id="mail_success" class="success">
-                                    پیام شما با موفقیت ارسال شد.
-                                </div>
-                                <div id="mail_fail" class="error">
-                                    متاسفانه در ارسال پیام خطایی رخ داده است.
-                                </div>
-                            </div>
-                        </form>*@
-
                     <div class="spacer-double"></div>
 
                     <div class="row text-center wow fadeInUp">
@@ -873,16 +453,6 @@
                     <div class="col-md-6 sm-text-center mb-sm-30">
                         تمامی حقوق برای وب سایت <a class="text-success" href="https://spad.co">اسپاد</a> محفوظ است.
                     </div>
-
-                    @*<div class="col-md-6 text-md-right text-sm-left">
-                            <div class="social-icons">
-                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-rss fa-lg"></i></a>
-                            </div>
-                        </div>*@
                 </div>
             </div>
         </footer>
@@ -926,19 +496,6 @@
     <script src="/Content/client/js/jquery.countdown.js"></script>
     <script src="/Content/client/js/designesia.js"></script>
     <script>
-
-        // $(window).click(function () {
-        //   setInterval(() => {
-        //     if (document.getElementById("mySidenav").style.width = '250px') {
-
-        //       document.getElementById("mySidenav").style.width = "0";
-        //     }
-        //   }, 2000);
-        // });
-
-        // $('#mySidenav').click(function (event) {
-        //   event.stopPropagation();
-        // });
         function closemenu() {
 
             if (document.getElementById("mySidenav").style.width = '250px') {
@@ -947,7 +504,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>
