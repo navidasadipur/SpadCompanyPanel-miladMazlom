@@ -82,6 +82,10 @@
     <Compile Include="Migrations\202102280857042_somAttributesinModelsFixed.Designer.cs">
       <DependentUpon>202102280857042_somAttributesinModelsFixed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103010722360_ModelsAndRepositoriesPolished.cs" />
+    <Compile Include="Migrations\202103010722360_ModelsAndRepositoriesPolished.Designer.cs">
+      <DependentUpon>202103010722360_ModelsAndRepositoriesPolished.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202102280857042_somAttributesinModelsFixed.resx">
       <DependentUpon>202102280857042_somAttributesinModelsFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103010722360_ModelsAndRepositoriesPolished.resx">
+      <DependentUpon>202103010722360_ModelsAndRepositoriesPolished.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

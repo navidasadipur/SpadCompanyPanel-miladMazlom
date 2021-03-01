@@ -111,7 +111,7 @@
     </script>
     <script>
         function btnCreate() {
-            $.get("/Admin/Gallery/Create", function (result) {
+            $.get("/Admin/Gallery/Create?id=@ViewBag.CategoryId", function (result) {
                 $("#myModal").modal();
                 $("#myModalLabel").html("افرودن تصویر");
                 $("#myModalHeader");

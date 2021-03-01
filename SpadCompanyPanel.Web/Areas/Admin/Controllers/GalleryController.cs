@@ -19,19 +19,32 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             _repo = repo;
             _categoryRepo = categoryRepo;
         }
-        public ActionResult Index(int id)
+        public ActionResult Index(int? id)
         {
-            var allCategories = _repo.getGalleriesByCategoryId(id);
+            if (id == null)
+            {
+                return RedirectToAction("Index", "GalleryCategory");
+            }
+            var allCategories = _repo.getGalleriesByCategoryId(id.Value);
 
-            ViewBag.CategoryTitle = _categoryRepo.Get(id).Title;
+            ViewBag.CategoryTitle = _categoryRepo.Get(id.Value).Title;
+            ViewBag.CategoryId = id;
 
             return View(allCategories);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.GalleryCategoryId = new SelectList(_categoryRepo.GetAll(), "Id", "Title");
-            return PartialView();
+            //ViewBag.GalleryCategoryId = new SelectList(_categoryRepo.GetAll(), "Id", "Title");
+            ViewBag.CategoryTitle = _categoryRepo.Get(id.Value).Title;
+
+            var model = new Gallery
+            {
+                GalleryCategoryId = id,
+                GalleryCategory = _categoryRepo.Get(id.Value)
+            };
+
+            return PartialView(model);
         }
 
         [HttpPost]
@@ -65,7 +78,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 #endregion
 
                 _repo.Add(image);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = image.GalleryCategoryId });
             }
 
             return View(image);
@@ -83,7 +96,8 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 return HttpNotFound();
             }
 
-            ViewBag.GalleryCategoryId = new SelectList(_categoryRepo.GetAll(), "Id", "Title");
+            //ViewBag.GalleryCategoryId = new SelectList(_categoryRepo.GetAll(), "Id", "Title");
+            ViewBag.CategoryTitle = _categoryRepo.Get(image.GalleryCategoryId.Value).Title;
 
             return PartialView(image);
         }
@@ -125,7 +139,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 #endregion
 
                 _repo.Update(gallery);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = gallery.GalleryCategoryId });
             }
             return View(gallery);
         }
@@ -149,19 +163,9 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         {
             var image = _repo.Get(id);
 
-            //#region Delete Image
-            //if (image.Image != null)
-            //{
-            //    if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/" + image.Image)))
-            //        System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/" + image.Image));
-
-            //    if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/" + image.Image)))
-            //        System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/" + image.Image));
-            //}
-            //#endregion
-
             _repo.Delete(id);
-            return RedirectToAction("Index");
+
+            return RedirectToAction("Index", new { id = image.GalleryCategoryId });
         }
     }
 }

@@ -18,9 +18,9 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly GalleryVideosRepository _galleryVideosRepo;
         private readonly TestimonialsRepository _testimonialRepo;
         private readonly ContactFormsRepository _contactFormRepo;
-        private readonly OurTeamRepository _ourTeamRepo;
+        //private readonly OurTeamRepository _ourTeamRepo;
         //private readonly CertificatesRepository _certificatesRepo;
-        private readonly FoodGalleriesRepository _foodGalleriesRepo;
+        //private readonly FoodGalleriesRepository _foodGalleriesRepo;
         private readonly CoverRepository _coverRepo;
         private readonly AboutMeRepository _aboutMeRepo;
         private readonly GalleryCategoryRepository _galleryCategoryRepo;
@@ -31,9 +31,9 @@ namespace SpadCompanyPanel.Web.Controllers
             GalleriesRepository galleryRepo,
             TestimonialsRepository testimonialRepo,
             ContactFormsRepository contactFormRepo,
-            OurTeamRepository ourTeamRepo,
+            //OurTeamRepository ourTeamRepo,
             /*CertificatesRepository certificatesRepo,*/ 
-            FoodGalleriesRepository foodGalleriesRepo, 
+            //FoodGalleriesRepository foodGalleriesRepo, 
             GalleryVideosRepository galleryVideosRepo, 
             CoverRepository coverRepo, 
             AboutMeRepository aboutMeRepo,
@@ -46,9 +46,9 @@ namespace SpadCompanyPanel.Web.Controllers
             _galleryRepo = galleryRepo;
             _testimonialRepo = testimonialRepo;
             _contactFormRepo = contactFormRepo;
-            _ourTeamRepo = ourTeamRepo;
+            //_ourTeamRepo = ourTeamRepo;
             //_certificatesRepo = certificatesRepo;
-            _foodGalleriesRepo = foodGalleriesRepo;
+            //_foodGalleriesRepo = foodGalleriesRepo;
             _galleryVideosRepo = galleryVideosRepo;
             this._coverRepo = coverRepo;
             this._aboutMeRepo = aboutMeRepo;
@@ -115,7 +115,7 @@ namespace SpadCompanyPanel.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult PostContact(ContactForm contactForm)
+        public ActionResult Index(ContactForm contactForm)
         {
 
             if (ModelState.IsValid)
@@ -222,17 +222,17 @@ namespace SpadCompanyPanel.Web.Controllers
         //    return View();
         //}
 
-        public ActionResult OurTeamSection()
-        {
-            var ourTeam = _ourTeamRepo.GetAll();
-            return PartialView(ourTeam);
-        }
-        [Route("OurTeam")]
-        public ActionResult OurTeamPage()
-        {
-            var ourTeam = _ourTeamRepo.GetAll();
-            return View(ourTeam);
-        }
+        //public ActionResult OurTeamSection()
+        //{
+        //    var ourTeam = _ourTeamRepo.GetAll();
+        //    return PartialView(ourTeam);
+        //}
+        //[Route("OurTeam")]
+        //public ActionResult OurTeamPage()
+        //{
+        //    var ourTeam = _ourTeamRepo.GetAll();
+        //    return View(ourTeam);
+        //}
         public ActionResult Footer(bool isContactUsPage)
         {
             if (isContactUsPage)
@@ -268,12 +268,12 @@ namespace SpadCompanyPanel.Web.Controllers
         //    var certificates = _certificatesRepo.GetAll();
         //    return View(certificates);
         //}
-        [Route("Foods")]
-        public ActionResult Foods()
-        {
-            var foodGallery = _foodGalleriesRepo.GetAll();
-            return View(foodGallery);
-        }
+        //[Route("Foods")]
+        //public ActionResult Foods()
+        //{
+        //    var foodGallery = _foodGalleriesRepo.GetAll();
+        //    return View(foodGallery);
+        //}
         [Route("AboutUs")]
         public ActionResult About()
         {

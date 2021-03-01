@@ -26,7 +26,7 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
         {
             var allGalleries = _context.Galleries.Where(g => g.IsDeleted == false).Include(g => g.GalleryCategory);
 
-            var GalleryIdCategory = allGalleries.Where(g => g.GalleryCategory.Id == id).ToList();
+            var GalleryIdCategory = allGalleries.Where(g => g.GalleryCategory.Id == id).OrderByDescending(g => g.Id).ToList();
 
             return GalleryIdCategory;
         }
