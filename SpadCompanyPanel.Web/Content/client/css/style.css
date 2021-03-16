@@ -12262,9 +12262,7 @@ blockquote {
     font-size: 18px;
   }
 }
-.topbackground {
-  background: url(../images/background/1.jpg) 50% 0px / cover;
-}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 800px) {

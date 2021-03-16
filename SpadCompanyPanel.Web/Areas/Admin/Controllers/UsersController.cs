@@ -251,60 +251,6 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        //public ActionResult EditMyProfile()
-        //{
-        //    var email = Session["UserEmail"];
-        //    var user = db.UsersRepository.Get().FirstOrDefault(u => u.Email.Trim().ToLower() == email.ToString().Trim().ToLower());
-        //    return View(user);
-        //}
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult EditMyProfile(Users users, string confirmPassword)
-        //{
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (users.Password == confirmPassword)
-        //        {
-        //            users.Password = PasswordHelper.base64Encode(users.Password);
-        //            db.UsersRepository.Update(users);
-        //            db.UsersRepository.Save();
-        //            return RedirectToAction("Index","Home");
-
-        //        }
-        //        else
-        //        {
-        //            ViewBag.Message = "عدم تطابق رمز عبور و تکرار رمز";
-        //        }
-
-        //    }
-
-        //    return View(users);
-
-        //}
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Users users = db.UsersRepository.getById(id);
-        //    if (users == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return PartialView(users);
-        //}
-
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Users users = db.UsersRepository.getById(id);
-        //    db.UsersRepository.Delete(users);
-        //    db.UsersRepository.Save();
-        //    return RedirectToAction("Index");
-        //}
         public ActionResult UserRoles(string userId)
         {
             #region Create User Roles

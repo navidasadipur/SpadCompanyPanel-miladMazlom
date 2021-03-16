@@ -19,12 +19,6 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         {
             _repo = repo;
         }
-        //public ActionResult Index(int articleId)
-        //{
-        //    ViewBag.ArticleName = _repo.GetArticleName(articleId);
-        //    ViewBag.ArticleId = articleId;
-        //    return View(_repo.GetArticleHeadLines(articleId));
-        //}
 
         public ActionResult Index()
         {
@@ -77,7 +71,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                     GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
 
                     // Resizing Image
-                    ImageResizer imageCut = new ImageResizer(1200, 1200, true);
+                    ImageResizer imageCut = new ImageResizer(2000, 2000, true);
 
                     imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
                         Server.MapPath("/Files/GalleryImages/" + newFileName));
@@ -114,162 +108,85 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             return RedirectToAction("Index")/*View(coverImage)*/;
         }
 
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cover coverImage = _repo.Get(id.Value);
-            if (coverImage == null)
-            {
-                return HttpNotFound();
-            }
-            return PartialView(coverImage);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Cover gallery, HttpPostedFileBase GalleryImage)
-        {
-            if (ModelState.IsValid)
-            {
-                #region Upload Image
-                if (GalleryImage != null)
-                {
-                    if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/" + gallery.Image)))
-                        System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/" + gallery.Image));
-
-                    if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/Thumb/" + gallery.Image)))
-                        System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Thumb/" + gallery.Image));
-
-                    // Saving Temp Image
-                    var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
-                    GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
-
-                    // Resizing Image
-                    ImageResizer imageCut = new ImageResizer(1200, 1200, true);
-
-                    imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-                        Server.MapPath("/Files/GalleryImages/" + newFileName));
-
-                    ImageResizer thumb = new ImageResizer(600, 600, true);
-
-                    thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-                        Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
-
-                    // Deleting Temp Image
-                    System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
-                    gallery.Image = newFileName;
-                }
-                #endregion
-
-                _repo.Update(gallery);
-                return RedirectToAction("Index");
-            }
-            return View(gallery);
-        }
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Cover image = _repo.Get(id.Value);
-            if (image == null)
-            {
-                return HttpNotFound();
-            }
-            return PartialView(image);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            var image = _repo.Get(id);
-
-            //#region Delete Image
-            //if (image.Image != null)
-            //{
-            //    if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/" + image.Image)))
-            //        System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/" + image.Image));
-
-            //    if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/" + image.Image)))
-            //        System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/" + image.Image));
-            //}
-            //#endregion
-
-            _repo.Delete(id);
-            return RedirectToAction("Index");
-        }
-
-        //public ActionResult Create(int articleId)
-        //{
-        //    ViewBag.ArticleId = articleId;
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Create(Cover headLine)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _repo.Add(headLine);
-        //        return RedirectToAction("Index", new { articleId = headLine.ArticleId });
-        //    }
-        //    ViewBag.ArticleId = headLine.ArticleId;
-        //    return View(headLine);
-        //}
-
         //public ActionResult Edit(int? id)
         //{
         //    if (id == null)
         //    {
         //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         //    }
-        //    Cover headLine = _repo.Get(id.Value);
-        //    if (headLine == null)
+        //    Cover coverImage = _repo.Get(id.Value);
+        //    if (coverImage == null)
         //    {
         //        return HttpNotFound();
         //    }
-        //    return View(headLine);
+        //    return PartialView(coverImage);
         //}
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(Cover headLine)
+        //public ActionResult Edit(Cover gallery, HttpPostedFileBase GalleryImage)
         //{
         //    if (ModelState.IsValid)
         //    {
-        //        _repo.Update(headLine);
-        //        return RedirectToAction("Index", new { articleId = headLine.ArticleId });
-        //    }
-        //    return View(headLine);
-        //}
+        //        #region Upload Image
+        //        if (GalleryImage != null)
+        //        {
+        //            if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/" + gallery.Image)))
+        //                System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/" + gallery.Image));
 
+        //            if (System.IO.File.Exists(Server.MapPath("/Files/GalleryImages/Thumb/" + gallery.Image)))
+        //                System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Thumb/" + gallery.Image));
+
+        //            // Saving Temp Image
+        //            var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
+        //            GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+
+        //            // Resizing Image
+        //            ImageResizer imageCut = new ImageResizer(1200, 1200, true);
+
+        //            imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+        //                Server.MapPath("/Files/GalleryImages/" + newFileName));
+
+        //            ImageResizer thumb = new ImageResizer(600, 600, true);
+
+        //            thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+        //                Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
+
+        //            // Deleting Temp Image
+        //            System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+        //            gallery.Image = newFileName;
+        //        }
+        //        #endregion
+
+        //        _repo.Update(gallery);
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(gallery);
+        //}
         //public ActionResult Delete(int? id)
         //{
         //    if (id == null)
         //    {
         //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         //    }
-        //    Cover headLine = _repo.Get(id.Value);
-        //    if (headLine == null)
+        //    Cover image = _repo.Get(id.Value);
+        //    if (image == null)
         //    {
         //        return HttpNotFound();
         //    }
-        //    return PartialView(headLine);
+        //    return PartialView(image);
         //}
 
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
         //public ActionResult DeleteConfirmed(int id)
         //{
-        //    var articleId = _repo.Get(id).ArticleId;
+        //    var image = _repo.Get(id);
+
+
         //    _repo.Delete(id);
-        //    return RedirectToAction("Index", new { articleId });
+        //    return RedirectToAction("Index");
         //}
+
     }
 }

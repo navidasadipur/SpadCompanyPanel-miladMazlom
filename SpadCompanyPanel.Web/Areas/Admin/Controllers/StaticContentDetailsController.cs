@@ -152,17 +152,6 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         {
             var staticContentDetail = _repo.Get(id);
 
-            //#region Delete StaticContentDetail Image
-            //if (staticContentDetail.Image != null)
-            //{
-            //    if (System.IO.File.Exists(Server.MapPath("/Files/StaticContentImages/Image/" + staticContentDetail.Image)))
-            //        System.IO.File.Delete(Server.MapPath("/Files/StaticContentImages/Image/" + staticContentDetail.Image));
-
-            //    if (System.IO.File.Exists(Server.MapPath("/Files/StaticContentImages/Thumb/" + staticContentDetail.Image)))
-            //        System.IO.File.Delete(Server.MapPath("/Files/StaticContentImages/Thumb/" + staticContentDetail.Image));
-            //}
-            //#endregion
-
             _repo.Delete(id);
             return RedirectToAction("Index");
         }

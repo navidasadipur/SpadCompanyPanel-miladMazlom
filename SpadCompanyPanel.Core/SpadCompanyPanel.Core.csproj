@@ -82,7 +82,6 @@
     <Compile Include="Models\AboutMe.cs" />
     <Compile Include="Models\Cover.cs" />
     <Compile Include="Models\ContactForm.cs" />
-    <Compile Include="Models\Faq.cs" />
     <Compile Include="Models\FoodGallery.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\GalleryVideo.cs" />

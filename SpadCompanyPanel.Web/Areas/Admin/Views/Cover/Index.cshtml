@@ -15,7 +15,7 @@
         <h3 class="card-title">
             ویرایش کاور سایت
         </h3>
-        @*<div class="card-toolbar">
+        <div class="card-toolbar">
             <!--begin::Button-->
             <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
                 <span class="svg-icon svg-icon-md">
@@ -29,13 +29,15 @@
                 </span>	تغییر عکس کاور
             </a>
             <!--end::Button-->
-        </div>*@
+        </div>
     </div>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.Id)
         <div class="card-body">
+            <img src="/Files/GalleryImages/@Model.Image" alt="@Model.ImageTitle" class="img-thumbnail rounded mx-auto d-block">
+
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.Title, new { @class = "control-label col-md-2" })
@@ -145,10 +147,6 @@
                         });
                     }
                 </script>*@
-
-
-
-
 
             <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
