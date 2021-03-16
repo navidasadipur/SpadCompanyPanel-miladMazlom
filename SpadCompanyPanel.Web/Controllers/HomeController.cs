@@ -16,7 +16,7 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly StaticContentDetailsRepository _contentRepo;
         private readonly GalleriesRepository _galleryRepo;
         private readonly GalleryVideosRepository _galleryVideosRepo;
-        private readonly TestimonialsRepository _testimonialRepo;
+        //private readonly TestimonialsRepository _testimonialRepo;
         private readonly ContactFormsRepository _contactFormRepo;
         //private readonly OurTeamRepository _ourTeamRepo;
         //private readonly CertificatesRepository _certificatesRepo;
@@ -29,7 +29,7 @@ namespace SpadCompanyPanel.Web.Controllers
 
         public HomeController( StaticContentDetailsRepository contentRepo, 
             GalleriesRepository galleryRepo,
-            TestimonialsRepository testimonialRepo,
+            //TestimonialsRepository testimonialRepo,
             ContactFormsRepository contactFormRepo,
             //OurTeamRepository ourTeamRepo,
             /*CertificatesRepository certificatesRepo,*/ 
@@ -44,7 +44,7 @@ namespace SpadCompanyPanel.Web.Controllers
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;
-            _testimonialRepo = testimonialRepo;
+            //_testimonialRepo = testimonialRepo;
             _contactFormRepo = contactFormRepo;
             //_ourTeamRepo = ourTeamRepo;
             //_certificatesRepo = certificatesRepo;

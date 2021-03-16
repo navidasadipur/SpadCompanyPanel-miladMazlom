@@ -88,175 +88,175 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             }
         }
 
-    //    public ActionResult Create1()
-    //    {
-    //        return PartialView();
-    //    }
+        public ActionResult Create1()
+        {
+            return PartialView();
+        }
 
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public ActionResult Create1(PersonalCharacter personalCharacterImage, HttpPostedFileBase GalleryImage)
-    //    {
-    //        if (ModelState.IsValid)
-    //        {
-    //            #region Upload Image
-    //            if (GalleryImage != null)
-    //            {
-    //                // Saving Temp Image
-    //                var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
-    //                GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create1(PersonalCharacter personalCharacterImage, HttpPostedFileBase GalleryImage)
+        {
+            if (ModelState.IsValid)
+            {
+                #region Upload Image
+                if (GalleryImage != null)
+                {
+                    // Saving Temp Image
+                    var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
+                    GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
 
-    //                // Resizing Image
-    //                ImageResizer imageCut = new ImageResizer(1200, 1200, true);
+                    // Resizing Image
+                    ImageResizer imageCut = new ImageResizer(1200, 1200, true);
 
-    //                imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-    //                    Server.MapPath("/Files/GalleryImages/" + newFileName));
+                    imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+                        Server.MapPath("/Files/GalleryImages/" + newFileName));
 
-    //                ImageResizer thumb = new ImageResizer(600, 600, true);
+                    ImageResizer thumb = new ImageResizer(600, 600, true);
 
-    //                thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-    //                    Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
+                    thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+                        Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
 
-    //                // Deleting Temp Image
-    //                System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
-    //                personalCharacterImage.Image = newFileName;
-    //            }
-    //            #endregion
-                
-    //            //saving image and imageTitle to the database
-    //            var firstPersonalCharacter = _repo.GetFirstPersonalCharacter();
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+                    personalCharacterImage.Image = newFileName;
+                }
+                #endregion
 
-    //            if (firstPersonalCharacter == null)
-    //            {
-    //                _repo.Add(personalCharacterImage);
-    //            }
-    //            else
-    //            {
-    //                firstPersonalCharacter.Image = personalCharacterImage.Image;
-    //                firstPersonalCharacter.ImageTitle = personalCharacterImage.ImageTitle;
+                //saving image and imageTitle to the database
+                var firstPersonalCharacter = _repo.GetFirstPersonalCharacter();
 
-    //                _repo.Update(firstPersonalCharacter);
-    //            }
+                if (firstPersonalCharacter == null)
+                {
+                    _repo.Add(personalCharacterImage);
+                }
+                else
+                {
+                    firstPersonalCharacter.Image = personalCharacterImage.Image;
+                    firstPersonalCharacter.ImageTitle = personalCharacterImage.ImageTitle;
 
-    //            return RedirectToAction("Index");
-    //        }
+                    _repo.Update(firstPersonalCharacter);
+                }
 
-    //            ////////////ToDo
-    //            return RedirectToAction("Index")/*View(coverImage)*/;
-    //    }
+                return RedirectToAction("Index");
+            }
 
-    //    public ActionResult Create2()
-    //    {
-    //        return PartialView();
-    //    }
+            ////////////ToDo
+            return RedirectToAction("Index")/*View(coverImage)*/;
+        }
 
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public ActionResult Create2(PersonalCharacter personalCharacterImage, HttpPostedFileBase GalleryImage)
-    //    {
-    //        if (ModelState.IsValid)
-    //        {
-    //            #region Upload Image
-    //            if (GalleryImage != null)
-    //            {
-    //                // Saving Temp Image
-    //                var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
-    //                GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+        public ActionResult Create2()
+        {
+            return PartialView();
+        }
 
-    //                // Resizing Image
-    //                ImageResizer imageCut = new ImageResizer(1200, 1200, true);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create2(PersonalCharacter personalCharacterImage, HttpPostedFileBase GalleryImage)
+        {
+            if (ModelState.IsValid)
+            {
+                #region Upload Image
+                if (GalleryImage != null)
+                {
+                    // Saving Temp Image
+                    var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
+                    GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
 
-    //                imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-    //                    Server.MapPath("/Files/GalleryImages/" + newFileName));
+                    // Resizing Image
+                    ImageResizer imageCut = new ImageResizer(1200, 1200, true);
 
-    //                ImageResizer thumb = new ImageResizer(600, 600, true);
+                    imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+                        Server.MapPath("/Files/GalleryImages/" + newFileName));
 
-    //                thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-    //                    Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
+                    ImageResizer thumb = new ImageResizer(600, 600, true);
 
-    //                // Deleting Temp Image
-    //                System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
-    //                personalCharacterImage.Image = newFileName;
-    //            }
-    //            #endregion
+                    thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+                        Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
 
-    //            //saving image and imageTitle to the database
-    //            var secondPersonalCharacter = _repo.GetSecondPersonalCharacter();
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+                    personalCharacterImage.Image = newFileName;
+                }
+                #endregion
 
-    //            if (secondPersonalCharacter == null)
-    //            {
-    //                _repo.Add(personalCharacterImage);
-    //            }
-    //            else
-    //            {
-    //                secondPersonalCharacter.Image = personalCharacterImage.Image;
-    //                secondPersonalCharacter.ImageTitle = personalCharacterImage.ImageTitle;
+                //saving image and imageTitle to the database
+                var secondPersonalCharacter = _repo.GetSecondPersonalCharacter();
 
-    //                _repo.Update(secondPersonalCharacter);
-    //            }
+                if (secondPersonalCharacter == null)
+                {
+                    _repo.Add(personalCharacterImage);
+                }
+                else
+                {
+                    secondPersonalCharacter.Image = personalCharacterImage.Image;
+                    secondPersonalCharacter.ImageTitle = personalCharacterImage.ImageTitle;
 
-    //            return RedirectToAction("Index");
-    //        }
+                    _repo.Update(secondPersonalCharacter);
+                }
 
-    //        ////////////ToDo
-    //        return RedirectToAction("Index")/*View(coverImage)*/;
-    //    }
+                return RedirectToAction("Index");
+            }
 
-    //    public ActionResult Create3()
-    //    {
-    //        return PartialView();
-    //    }
+            ////////////ToDo
+            return RedirectToAction("Index")/*View(coverImage)*/;
+        }
 
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public ActionResult Create3(PersonalCharacter personalCharacterImage, HttpPostedFileBase GalleryImage)
-    //    {
-    //        if (ModelState.IsValid)
-    //        {
-    //            #region Upload Image
-    //            if (GalleryImage != null)
-    //            {
-    //                // Saving Temp Image
-    //                var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
-    //                GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+        public ActionResult Create3()
+        {
+            return PartialView();
+        }
 
-    //                // Resizing Image
-    //                ImageResizer imageCut = new ImageResizer(1200, 1200, true);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create3(PersonalCharacter personalCharacterImage, HttpPostedFileBase GalleryImage)
+        {
+            if (ModelState.IsValid)
+            {
+                #region Upload Image
+                if (GalleryImage != null)
+                {
+                    // Saving Temp Image
+                    var newFileName = Guid.NewGuid() + Path.GetExtension(GalleryImage.FileName);
+                    GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
 
-    //                imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-    //                    Server.MapPath("/Files/GalleryImages/" + newFileName));
+                    // Resizing Image
+                    ImageResizer imageCut = new ImageResizer(1200, 1200, true);
 
-    //                ImageResizer thumb = new ImageResizer(600, 600, true);
+                    imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+                        Server.MapPath("/Files/GalleryImages/" + newFileName));
 
-    //                thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
-    //                    Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
+                    ImageResizer thumb = new ImageResizer(600, 600, true);
 
-    //                // Deleting Temp Image
-    //                System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
-    //                personalCharacterImage.Image = newFileName;
-    //            }
-    //            #endregion
+                    thumb.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
+                        Server.MapPath("/Files/GalleryImages/Thumb/" + newFileName));
 
-    //            //saving image and imageTitle to the database
-    //            var thirdPersonalCharacter = _repo.GetThirdPersonalCharacter();
+                    // Deleting Temp Image
+                    System.IO.File.Delete(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
+                    personalCharacterImage.Image = newFileName;
+                }
+                #endregion
 
-    //            if (thirdPersonalCharacter == null)
-    //            {
-    //                _repo.Add(personalCharacterImage);
-    //            }
-    //            else
-    //            {
-    //                thirdPersonalCharacter.Image = personalCharacterImage.Image;
-    //                thirdPersonalCharacter.ImageTitle = personalCharacterImage.ImageTitle;
+                //saving image and imageTitle to the database
+                var thirdPersonalCharacter = _repo.GetThirdPersonalCharacter();
 
-    //                _repo.Update(thirdPersonalCharacter);
-    //            }
+                if (thirdPersonalCharacter == null)
+                {
+                    _repo.Add(personalCharacterImage);
+                }
+                else
+                {
+                    thirdPersonalCharacter.Image = personalCharacterImage.Image;
+                    thirdPersonalCharacter.ImageTitle = personalCharacterImage.ImageTitle;
 
-    //            return RedirectToAction("Index");
-    //        }
+                    _repo.Update(thirdPersonalCharacter);
+                }
 
-    //        ////////////ToDo
-    //        return RedirectToAction("Index")/*View(coverImage)*/;
-    //    }
+                return RedirectToAction("Index");
+            }
+
+            ////////////ToDo
+            return RedirectToAction("Index")/*View(coverImage)*/;
+        }
     }
 }

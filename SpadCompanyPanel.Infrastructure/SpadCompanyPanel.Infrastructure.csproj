@@ -86,6 +86,10 @@
     <Compile Include="Migrations\202103010722360_ModelsAndRepositoriesPolished.Designer.cs">
       <DependentUpon>202103010722360_ModelsAndRepositoriesPolished.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103161216098_someNotUsedModelsAndRepositoriesDeleted.cs" />
+    <Compile Include="Migrations\202103161216098_someNotUsedModelsAndRepositoriesDeleted.Designer.cs">
+      <DependentUpon>202103161216098_someNotUsedModelsAndRepositoriesDeleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,18 +99,14 @@
     <Compile Include="Repositories\GalleryCategoryRepository.cs" />
     <Compile Include="Repositories\CoverRepository.cs" />
     <Compile Include="Repositories\ContactFormsRepository.cs" />
-    <Compile Include="Repositories\FaqRepository.cs" />
     <Compile Include="Repositories\GalleriesRepository.cs" />
     <Compile Include="Repositories\GalleryVideosRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
-    <Compile Include="Repositories\OurTeamRepository.cs" />
-    <Compile Include="Repositories\ProjectGalleriesRepository.cs" />
     <Compile Include="Repositories\ServiceIncludesRepository.cs" />
     <Compile Include="Repositories\ServicesRepository.cs" />
     <Compile Include="Repositories\StaticContentDetailsRepository.cs" />
     <Compile Include="Repositories\StaticContentsRepository.cs" />
     <Compile Include="Repositories\StaticContentTypes.cs" />
-    <Compile Include="Repositories\TestimonialsRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="Seed.cs" />
   </ItemGroup>
@@ -135,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103010722360_ModelsAndRepositoriesPolished.resx">
       <DependentUpon>202103010722360_ModelsAndRepositoriesPolished.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103161216098_someNotUsedModelsAndRepositoriesDeleted.resx">
+      <DependentUpon>202103161216098_someNotUsedModelsAndRepositoriesDeleted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

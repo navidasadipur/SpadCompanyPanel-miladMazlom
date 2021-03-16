@@ -37,14 +37,6 @@ namespace SpadCompanyPanel.Core.Models
 
         public bool IsDeleted { get; set; }
 
-        ////[Display(Name = "توضیح")]
-        ////[DataType(DataType.MultilineText)]
-        ////[AllowHtml]
-        ////public string Description { get; set; }
-
-        ////public int ArticleId { get; set; }
-        ////public Article Article { get; set; }
-        ///
 
     }
 }

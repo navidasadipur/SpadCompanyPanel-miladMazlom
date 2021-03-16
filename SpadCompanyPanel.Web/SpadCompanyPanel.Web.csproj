@@ -205,7 +205,6 @@
     <Compile Include="Areas\Admin\Controllers\ServicesController.cs" />
     <Compile Include="Areas\Admin\Controllers\StaticContentDetailsController.cs" />
     <Compile Include="Areas\Admin\Controllers\StaticContentTypesController.cs" />
-    <Compile Include="Areas\Admin\Controllers\TestimonialsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
     <Compile Include="Areas\Admin\Models\PersonalCharacterPanelView.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -2266,10 +2265,6 @@
     <Content Include="Areas\Admin\Views\StaticContentTypes\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\StaticContentTypes\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\StaticContentTypes\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Testimonials\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Testimonials\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\Testimonials\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Testimonials\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
@@ -2445,9 +2440,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Areas\Admin\Views\Users\ResetMyPassword.cshtml" />
-    <Content Include="Areas\Admin\Views\Cover\Create-old.cshtml" />
-    <Content Include="Areas\Admin\Views\Cover\Delete-old.cshtml" />
-    <Content Include="Areas\Admin\Views\Cover\Edit-old.cshtml" />
     <Content Include="Areas\Admin\Views\Cover\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AboutMe\Create-old.cshtml" />
     <Content Include="Areas\Admin\Views\AboutMe\Delete-old.cshtml" />
@@ -2464,11 +2456,8 @@
     <Content Include="Areas\Admin\Views\GalleryCategory\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\GalleryCategory\Create.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create1.cshtml" />
-    <Content Include="Areas\Admin\Views\PersonalCharacter\Delete-1.cshtml" />
-    <Content Include="Areas\Admin\Views\PersonalCharacter\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Index.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Delete.cshtml" />
-    <Content Include="Areas\Admin\Views\PersonalCharacter\Create.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create2.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create3.cshtml" />
     <Content Include="Content\client\js\bootstrap.min.js.map" />
@@ -2497,6 +2486,10 @@
     <Content Include="Content\client\fonts\fa-solid-900.ttf" />
     <Content Include="Content\client\fonts\fa-solid-900.woff2" />
     <Content Include="Content\client\fonts\fa-solid-900d41d.eot" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\PersonalCharacter\Copy.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />

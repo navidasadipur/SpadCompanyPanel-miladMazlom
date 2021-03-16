@@ -17,7 +17,7 @@ namespace SpadCompanyPanel.Infrastructure
         public DbSet<StaticContentType> StaticContentTypes { get; set; }
         public DbSet<StaticContentDetail> StaticContentDetails { get; set; }
         //public DbSet<OurTeam> OurTeams { get; set; }
-        public DbSet<Testimonial> Testimonials { get; set; }
+        //public DbSet<Testimonial> Testimonials { get; set; }
         //public DbSet<Certificate> Certificates { get; set; }
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Service> Services { get; set; }

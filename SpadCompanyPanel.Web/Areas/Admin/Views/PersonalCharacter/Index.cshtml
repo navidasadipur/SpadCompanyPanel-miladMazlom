@@ -8,19 +8,6 @@
 <input type="hidden" id="nav_active" value="personal_character">
 <input type="hidden" id="nav_item_active" value="personal_character">
 <div class="card card-custom">
-    @*<div class="card-header flex-wrap border-0 pt-6 pb-0">
-            <div class="card-title">
-                <h3 class="card-label">
-                    @ViewBag.Title
-                    <span class="d-block text-muted pt-2 font-size-sm">ویرایش کاور سایت</span>
-                </h3>
-            </div>
-            <div class="card-toolbar">
-                <a href="/Admin/Articles" class="btn btn-light-success" style="margin-left:20px">
-                    <i class="flaticon2-arrow"></i> بازگشت
-                </a>
-            </div>
-        </div>*@
 
 </div>
 
@@ -66,7 +53,7 @@
                                     <div class="col-sm-5 ">
                                     </div>
                                     <div class="col-sm-7 ">
-                                        <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate1()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
+                                        <a onclick="@(CheckPermission.Check("gallerycreate") ? $"btnCreate2()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
                                             <span class="svg-icon svg-icon-md">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -314,12 +301,12 @@
                     @Html.ValidationMessageFor(model => model.ShortDescriptionThree, "", new { @class = "form-text text-danger" })
                 </div>
             </div>
-        </div>*@
-    @*</div>*@
-    @*</div>*@
+        </div>
+    </div>
+    </div>*@
 
     <!-- Modal -->
-    @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header" id="myModalHeader">
@@ -333,7 +320,7 @@
                     </div>
                 </div>
             </div>
-        </div>*@
+        </div>
     <!-- Modal -->
     <!-- Modal -->
     @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">

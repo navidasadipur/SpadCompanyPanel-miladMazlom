@@ -82,11 +82,9 @@
     <Compile Include="Models\AboutMe.cs" />
     <Compile Include="Models\Cover.cs" />
     <Compile Include="Models\ContactForm.cs" />
-    <Compile Include="Models\FoodGallery.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\GalleryVideo.cs" />
     <Compile Include="Models\Log.cs" />
-    <Compile Include="Models\OurTeam.cs" />
     <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RolePermission.cs" />
@@ -94,7 +92,6 @@
     <Compile Include="Models\ServiceInclude.cs" />
     <Compile Include="Models\StaticContentDetail.cs" />
     <Compile Include="Models\StaticContentType.cs" />
-    <Compile Include="Models\Testimonial.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
