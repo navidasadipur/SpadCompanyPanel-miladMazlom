@@ -1794,51 +1794,141 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\client\css\animate.css" />
-    <Content Include="Content\client\css\bootstrap-grid.min.css" />
-    <Content Include="Content\client\css\bootstrap-reboot.min.css" />
-    <Content Include="Content\client\css\bootstrap.min.css" />
-    <Content Include="Content\client\css\bootstrap.min.rtl.css" />
-    <Content Include="Content\client\css\coloring.css" />
-    <Content Include="Content\client\css\fonts.css" />
-    <Content Include="Content\client\css\jpreloader.css" />
-    <Content Include="Content\client\css\jquery.countdown.css" />
-    <Content Include="Content\client\css\magnific-popup.css" />
-    <Content Include="Content\client\css\owl.carousel.css" />
-    <Content Include="Content\client\css\owl.theme.css" />
-    <Content Include="Content\client\css\owl.transitions.css" />
-    <Content Include="Content\client\css\rev-settings.css" />
-    <Content Include="Content\client\css\style.css" />
-    <Content Include="Content\client\css\supersized.css" />
-    <Content Include="Content\client\fonts\fa-brands-400.svg" />
-    <Content Include="Content\client\fonts\fa-regular-400.svg" />
-    <Content Include="Content\client\fonts\fa-solid-900.svg" />
-    <Content Include="Content\client\js\app.js" />
-    <Content Include="Content\client\js\bootstrap.min.js" />
-    <Content Include="Content\client\js\countdown-custom.js" />
-    <Content Include="Content\client\js\designesia.js" />
-    <Content Include="Content\client\js\easing.js" />
-    <Content Include="Content\client\js\enquire.min.js" />
-    <Content Include="Content\client\js\html5shiv.js" />
-    <Content Include="Content\client\js\jquery.countdown.js" />
-    <Content Include="Content\client\js\jquery.countTo.js" />
-    <Content Include="Content\client\js\jquery.isotope.min.js" />
-    <Content Include="Content\client\js\jquery.magnific-popup.min.js" />
-    <Content Include="Content\client\js\jquery.min.js" />
-    <Content Include="Content\client\js\jquery.plugin.js" />
-    <Content Include="Content\client\js\jquery.stellar.min.js" />
-    <Content Include="Content\client\js\map.js" />
-    <Content Include="Content\client\js\maps.api.js" />
-    <Content Include="Content\client\js\owl.carousel.js" />
-    <Content Include="Content\client\js\owl.carousel.min.js" />
-    <Content Include="Content\client\js\particles.js" />
-    <Content Include="Content\client\js\supersized.3.2.7.min.js" />
-    <Content Include="Content\client\js\typed-custom.js" />
-    <Content Include="Content\client\js\typed.js" />
-    <Content Include="Content\client\js\validation.js" />
-    <Content Include="Content\client\js\wow.min.js" />
-    <Content Include="Content\client\webfonts\fa-regular-400.html" />
-    <Content Include="Content\client\webfonts\fa-solid-900.html" />
+    <Content Include="Content\client\css\animate.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\bootstrap-grid.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\bootstrap-reboot.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\bootstrap.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\bootstrap.min.rtl.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\coloring.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\fonts.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\jpreloader.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\jquery.countdown.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\magnific-popup.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\owl.carousel.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\owl.theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\owl.transitions.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\rev-settings.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\supersized.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-brands-400.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-regular-400.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-solid-900.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\bootstrap.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\countdown-custom.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\designesia.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\easing.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\enquire.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\html5shiv.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\jquery.countdown.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\jquery.countTo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\jquery.isotope.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\jquery.magnific-popup.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\jquery.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\jquery.plugin.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\jquery.stellar.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\map.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\maps.api.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\owl.carousel.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\owl.carousel.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\particles.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\supersized.3.2.7.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\typed-custom.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\typed.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\validation.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\js\wow.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\webfonts\fa-regular-400.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\webfonts\fa-solid-900.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\kendo\2020.1.114\Black\editor.png" />
     <Content Include="Content\kendo\2020.1.114\Black\imagebrowser.png" />
     <Content Include="Content\kendo\2020.1.114\Black\indeterminate.gif" />
@@ -2460,7 +2550,9 @@
     <Content Include="Areas\Admin\Views\PersonalCharacter\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create2.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create3.cshtml" />
-    <Content Include="Content\client\js\bootstrap.min.js.map" />
+    <Content Include="Content\client\js\bootstrap.min.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Areas\Admin\Views\MyContactInfo\Create.cshtml" />
     <Content Include="Areas\Admin\Views\MyContactInfo\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\MyContactInfo\Edit.cshtml" />
@@ -2470,22 +2562,54 @@
     <Content Include="Areas\Admin\Views\ContactForm\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ContactForm\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ContactForm\View.cshtml" />
-    <Content Include="Content\client\css\bootstrap-grid.min.css.map" />
-    <Content Include="Content\client\css\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\client\css\bootstrap.min.css.map" />
-    <Content Include="Content\client\fonts\fa-brands-400.eot" />
-    <Content Include="Content\client\fonts\fa-brands-400.ttf" />
-    <Content Include="Content\client\fonts\fa-brands-400.woff" />
-    <Content Include="Content\client\fonts\fa-brands-400.woff2" />
-    <Content Include="Content\client\fonts\fa-brands-400d41d.eot" />
-    <Content Include="Content\client\fonts\fa-regular-400.eot" />
-    <Content Include="Content\client\fonts\fa-regular-400.woff" />
-    <Content Include="Content\client\fonts\fa-regular-400.woff2" />
-    <Content Include="Content\client\fonts\fa-regular-400d41d.eot" />
-    <Content Include="Content\client\fonts\fa-solid-900.eot" />
-    <Content Include="Content\client\fonts\fa-solid-900.ttf" />
-    <Content Include="Content\client\fonts\fa-solid-900.woff2" />
-    <Content Include="Content\client\fonts\fa-solid-900d41d.eot" />
+    <Content Include="Content\client\css\bootstrap-grid.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\bootstrap-reboot.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\css\bootstrap.min.css.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-brands-400.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-brands-400.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-brands-400.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-brands-400.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-brands-400d41d.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-regular-400.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-regular-400.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-regular-400.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-regular-400d41d.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-solid-900.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-solid-900.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-solid-900.woff2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\client\fonts\fa-solid-900d41d.eot">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Areas\Admin\Views\PersonalCharacter\Create.cshtml" />
     <Content Include="Areas\Admin\Views\PersonalCharacter\Copy.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

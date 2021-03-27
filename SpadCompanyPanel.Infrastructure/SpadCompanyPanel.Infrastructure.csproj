@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202103161216098_someNotUsedModelsAndRepositoriesDeleted.Designer.cs">
       <DependentUpon>202103161216098_someNotUsedModelsAndRepositoriesDeleted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103270727315_inGalleryCategoryBugFixed.cs" />
+    <Compile Include="Migrations\202103270727315_inGalleryCategoryBugFixed.Designer.cs">
+      <DependentUpon>202103270727315_inGalleryCategoryBugFixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103161216098_someNotUsedModelsAndRepositoriesDeleted.resx">
       <DependentUpon>202103161216098_someNotUsedModelsAndRepositoriesDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103270727315_inGalleryCategoryBugFixed.resx">
+      <DependentUpon>202103270727315_inGalleryCategoryBugFixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
